@@ -7,11 +7,11 @@ export const newProfile = () => {
   <img src="./img/profile_image.png" alt="" class="newProfileImage"><br>
   <div class="scroll-container">
   <input type="text" id="name" class="newProfileInput" placeholder="Nombre">
-  <label for=""class="TextInputTwo">Sólo Letras</label><br>
+  <label for=""class="TextInputTwo">Solo Letras</label><br>
   <input type="text" id="lastName" class="newProfileInput" placeholder="Apellido">
-  <label for=""class="TextInputTwo">Sólo Letras</label><br>
+  <label for=""class="TextInputTwo">Solo Letras</label><br>
   <input type="text" id="city" class="newProfileInput" placeholder="Ciudad">
-  <label for=""class="TextInputTwo">Sólo Letras</label><br>
+  <label for=""class="TextInputTwo">Solo Letras</label><br>
   <input type="text" id="instagram" class="newProfileInput" placeholder="Instagram">
   <label for=""class="TextInputTwo">Escribe tu usuario de Instagram</label><br>
   <input type="text" id="facebook" class="newProfileInput" placeholder="Facebook">
@@ -20,7 +20,7 @@ export const newProfile = () => {
   <label for=""class="TextInputTwo">Cuentanos algo sobre ti</label><br>
   </div>
   <div class="newProfileBtn">
-  <button id="newProfileBtn" href="#/showProfile">SIGUIENTE</button></div><br>
+  <button id="newProfileBtn" class="profileButton">SIGUIENTE</button></div><br>
   <a id="showProfile" href="#/showProfile">Ver perfil</a><br>
   
 `
@@ -45,7 +45,10 @@ export const newProfile = () => {
     instagram: instagram,
     facebook: facebook,
     aboutMe: aboutMe,
-    userID: uid,});
+    userID: uid,}).then(()=>{
+    location.assign("#/showProfile");
+    console.log(firestore.collection('users'));
+    });
   });
  
 

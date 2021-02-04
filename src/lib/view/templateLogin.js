@@ -6,21 +6,26 @@ export const login = () => {
 
 <div class= "loginTitle"><h3>Iniciar Sesión</h3><img src="./img/spainFlag.png" alt="Español" class="loginFlag"></div>
 
-<div class= "loginImage"><img src="./img/logoTuOportunidad.png" alt=""></div><br><br>
+<div class= "loginImage"><img src="./img/logoTuOportunidad.png" alt=""></div><br><br><br><br><br><br>
 
+<div class= "inputsBigContainer">
 <div class="loginEmailInputContainer">
-<input type="text" id="loginEmail" class="loginEmailInput" placeholder=" ">
-<label for=""class="loginEmailTextInput">Email</label><br><br><br>
+<input type="text" id="loginEmail" class="loginEmailInput" required>
+<span class="loginEmailTextInput">Email</span>
 <label for=""class="loginEmailTextInput2">Texto</label>
 </div><br><br>
-<div class="loginEmailInputContainer">
-<input type="password" id="loginPassword" class="loginEmailInput" placeholder=" ">
-<label for="" class= "loginEmailTextInput">Contraseña</label><br><br><br>
-<label for="" class= "loginEmailTextInput2">Letras y números</label>
-</div><br><br>
 
-<button id="logInBtn" href="#/newProfile" class="loginButton">INICIAR SESIÓN</button>
-`;
+<div class="loginEmailInputContainer">
+<input type="password" id="loginPassword" class="loginPasswordInput" required>
+<span class= "loginPasswordTextInput">Contraseña</span><br>
+<label for="" class= "loginPasswordTextInput2">Letras y números</label>
+</div><br><br>
+</div>
+
+<div class= "loginButtonContainer">
+<button id="logInBtn" class= "logInBtn" href="#/newProfile">INICIAR SESIÓN</button>
+</div>
+`
 
 divLogin.innerHTML= viewLogin;
 
