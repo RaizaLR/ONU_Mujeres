@@ -1,6 +1,6 @@
 // import {registerWithEmail} from '../index.js';
 
-export const register = () => {
+export const home = () => {
     const divRegister = document.createElement("div"); 
     const viewRegister=`
   <img src="img/logo.png" alt="Beauty Tips Logo">
