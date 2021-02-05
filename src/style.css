@@ -147,6 +147,10 @@ table {
   border-radius: 8px;
 }
 
+.loginEmailTextInput2{
+    font-size: 2vh;
+}
+
 .loginPasswordInputContainer{
     position: relative;
   }
@@ -209,7 +213,13 @@ table {
     display:flex;
     justify-self: center;
     align-items:center;
+    justify-content: center;
     /* margin-left:150px; */
+}
+
+#showProfile{
+    display: flex;
+    align-self: center;
 }
 
 .profileButton{

@@ -6,19 +6,39 @@ export const newProfile = () => {
   <div class= "profileTitle"><h3>Crear Perfil</h3></div><br>
   <img src="./img/profile_image.png" alt="" class="newProfileImage"><br>
   <div class="scroll-container">
-  <input type="text" id="name" class="newProfileInput" placeholder="Nombre">
-  <label for=""class="TextInputTwo">Solo Letras</label><br>
-  <input type="text" id="lastName" class="newProfileInput" placeholder="Apellido">
-  <label for=""class="TextInputTwo">Solo Letras</label><br>
-  <input type="text" id="city" class="newProfileInput" placeholder="Ciudad">
-  <label for=""class="TextInputTwo">Solo Letras</label><br>
-  <input type="text" id="instagram" class="newProfileInput" placeholder="Instagram">
-  <label for=""class="TextInputTwo">Escribe tu usuario de Instagram</label><br>
-  <input type="text" id="facebook" class="newProfileInput" placeholder="Facebook">
-  <label for=""class="TextInputTwo">Escribe tu usuario de Facebook</label><br>
-  <input type="textarea" id="aboutMe" class="newProfileInput" placeholder="Sobre mi">
-  <label for=""class="TextInputTwo">Cuentanos algo sobre ti</label><br>
+
+  <div class="loginEmailInputContainer">
+  <input type="text" id="name" class="loginEmailInput" required>
+  <span class="loginEmailTextInput">Nombre</span>
+  <label for=""class="loginEmailTextInput2">Solo Letras</label><br><br></div>
+
+  <div class="loginEmailInputContainer">
+  <input type="text" id="lastname" class="loginEmailInput" required>
+  <span class="loginEmailTextInput">Apellido</span>
+  <label for=""class="loginEmailTextInput2">Solo Letras</label><br><br></div>
+
+  <div class="loginEmailInputContainer">
+  <input type="text" id="city" class="loginEmailInput" required>
+  <span class="loginEmailTextInput">Ciudad</span>
+  <label for=""class="loginEmailTextInput2">Solo Letras</label><br><br></div>
+
+  <div class="loginEmailInputContainer">
+  <input type="text" id="instagram" class="loginEmailInput" required>
+  <span class="loginEmailTextInput">Instagram</span>
+  <label for=""class="loginEmailTextInput2">Escribe tu usuario de Instagram</label><br><br></div>
+
+  <div class="loginEmailInputContainer">
+  <input type="text" id="facebook" class="loginEmailInput" required>
+  <span class="loginEmailTextInput">Facebook</span>
+  <label for=""class="loginEmailTextInput2">Escribe tu usuario de Facebook</label><br><br></div>
+
+  <div class="loginEmailInputContainer">
+  <input type="text" id="aboutMe" class="loginEmailInput" required>
+  <span class="loginEmailTextInput">Sobre mi</span>
+  <label for=""class="loginEmailTextInput2">Cuentanos algo sobre ti</label><br><br>
   </div>
+  </div>
+
   <div class="newProfileBtn">
   <button id="newProfileBtn" class="profileButton">SIGUIENTE</button></div><br>
   <a id="showProfile" href="#/showProfile">Ver perfil</a><br>
