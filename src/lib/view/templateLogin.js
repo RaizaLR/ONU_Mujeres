@@ -19,8 +19,11 @@ export const login = () => {
 <input type="password" id="loginPassword" class="loginPasswordInput" required>
 <span class= "loginPasswordTextInput">Contraseña</span><br>
 <label for="" class= "loginPasswordTextInput2">Letras y números</label>
-</div><br><br>
-</div>
+</div><br>
+
+<div class="eyeImageContainer">
+<img src= "img/visibility.png" id="eye" class= "eyeImage"><br>
+</div><br><br><br>
 
 <div class= "loginButtonContainer">
 <button id="logInBtn" class= "logInBtn" href="#/newProfile">INICIAR SESIÓN</button>
@@ -56,6 +59,21 @@ loginWithEmail.addEventListener("click",() =>{
     console.log(errorMessage);
   });}
 )
+//Intento de ponerle el ojo a la contraseña-------------------------------------
+let passwordInput = divLogin.querySelector("#loginPassword");
+let eyeIcon = divLogin.querySelector("#eye");
 
+eyeIcon.addEventListener("click", ()=>{
+console.log("hola")
+  if(passwordInput.type === "password"){
+    passwordInput.type = "text";
+    eyeIcon.src = "img/invisible.png";
+  }else{
+    passwordInput.type = "password";
+    eyeIcon.src = "img/visibility.png";
+  }
+});
+//---------------------------------------------------------------------------
 return divLogin;
 }
+
