@@ -9,6 +9,9 @@ export const profile = () => {
         Ciudad<br>
         <span id="profileCity"></span><br><br>
 
+        Ocupación<br>
+        <span id="profileOccupation"></span><br><br>
+
         Instagram<br>
         <span id="profileInstagram"></span><br><br>
 
@@ -19,7 +22,7 @@ export const profile = () => {
         <span id="profileAboutMe"></span><br>
     </p>
 
-    <button><a href="#/home"">LISTO</a></button>
+    <button><a href="#/test">LISTO</a></button>
 `
 
 divProfile.innerHTML = viewProfile;
@@ -35,6 +38,7 @@ firestore.collection('users').doc(uid).get().then(function(doc){
         divProfile.querySelector("#profileInstagram").innerHTML = doc.data().instagram;
         divProfile.querySelector("#profileFacebook").innerHTML = doc.data().facebook;
         divProfile.querySelector("#profileAboutMe").innerHTML = doc.data().aboutMe;
+        divProfile.querySelector("#profileOccupation").innerHTML = doc.data().occupation;
     } else {
         console.log("No such document!");
     }

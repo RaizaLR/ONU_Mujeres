@@ -4,9 +4,9 @@ export const login = () => {
     const viewLogin = `
 <img src="./img/chevron_left_24px.png" alt="atrás" class="backBtn">
 
-<div class= "loginTitle"><h3>Iniciar Sesión</h3><img src="./img/spainFlag.png" alt="Español" class="loginFlag"></div>
+<div class= "loginTitle"><h3 class="logIn">Iniciar Sesión</h3><img src="./img/spainFlag.png" alt="Español" class="loginFlag"></div>
 
-<div class= "loginImage"><img src="./img/logoTuOportunidad.png" alt=""></div><br><br><br><br><br><br>
+<div class= "loginImage"><img src="./img/logoTuOportunidad.png" alt=""></div><br><br><br><br>
 
 <div class= "inputsBigContainer">
 <div class="loginEmailInputContainer">
@@ -18,12 +18,12 @@ export const login = () => {
 <div class="loginEmailInputContainer">
 <input type="password" id="loginPassword" class="loginPasswordInput" required>
 <span class= "loginPasswordTextInput">Contraseña</span><br>
-<label for="" class= "loginPasswordTextInput2">Letras y números</label>
+<label for="" class= "loginEmailTextInput2">Letras y números</label>
 </div><br>
 
 <div class="eyeImageContainer">
 <img src= "img/visibility.png" id="eye" class= "eyeImage"><br>
-</div><br><br><br>
+</div><br><br><br><br><br>
 
 <div class= "loginButtonContainer">
 <button id="logInBtn" class= "logInBtn" href="#/newProfile">INICIAR SESIÓN</button>
@@ -64,7 +64,6 @@ let passwordInput = divLogin.querySelector("#loginPassword");
 let eyeIcon = divLogin.querySelector("#eye");
 
 eyeIcon.addEventListener("click", ()=>{
-console.log("hola")
   if(passwordInput.type === "password"){
     passwordInput.type = "text";
     eyeIcon.src = "img/invisible.png";

@@ -77,8 +77,13 @@ table {
 }
 
 .loginFlag{
+    margin-right: 5vw;
     width: 20px;
     height: 20px;
+}
+
+.logIn{
+    margin-left: 5vw; 
 }
 
 .backBtn{
@@ -90,8 +95,15 @@ table {
 
 .loginTitle{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.15px;   
+    color: #000000;
 }
 
 .loginImage{
@@ -116,15 +128,16 @@ table {
 }
 .loginEmailInput{
     width: 300px;
+    /* height: 5vh; */
     margin: auto;
     display: flex;
-    padding: 10px;
+    padding: 15px;
     border: 2px solid #DADCE0;
-    border-radius: 8px;
+    border-radius: 3.5px;
 }
 .loginEmailTextInput{
     position: absolute;
-    top: 10px;
+    top: 17px;
     left: 15px;
     letter-spacing: 0.05em;
     color: #80868B;
@@ -135,7 +148,7 @@ table {
 }
 .loginEmailInput:focus{
     outline: 2px;
-    border-radius: 8px;
+    border-radius: 3.5px;
     border-color: #1A73E8;
 }
 .loginEmailInput:focus + .loginEmailTextInput,
@@ -144,11 +157,16 @@ table {
   left: 10px;
   background: #ffffff;
   color:#1A73E8;
-  border-radius: 8px;
+  border-radius: 3.5px;
 }
 
 .loginEmailTextInput2{
-    font-size: 2vh;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0.4px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-left: 4vw;
 }
 
 .loginPasswordInputContainer{
@@ -156,18 +174,14 @@ table {
   }
   .loginPasswordInput{
       width: 300px;
-      padding: 10px;
+      padding: 15px;
       border: 2px solid #DADCE0;
-      border-radius: 8px;
-      /* background-image: url(img/visibility.png);
-      background-repeat: no-repeat;
-      background-position: 98% 50%;
-      background-size: 25px; */
+      border-radius: 3.5px;
   }
 
 .eyeImageContainer{
     position: relative;
-    margin-top: -65px;
+    margin-top: -69px;
     margin-left: 280px;
 }
 
@@ -177,7 +191,7 @@ table {
 }
   .loginPasswordTextInput{
       position: absolute;
-      top: 10px;
+      top: 17px;
       left: 15px;
       letter-spacing: 0.05em;
       color: #80868B;
@@ -188,7 +202,7 @@ table {
   }
   .loginPasswordInput:focus{
       outline: 2px;
-      border-radius: 8px;
+      border-radius: 3.5px;
       border-color: #1A73E8;
   }
   .loginPasswordInput:focus + .loginPasswordTextInput,
@@ -197,7 +211,7 @@ table {
     left: 10px;
     background: #ffffff;
     color:#1A73E8;
-    border-radius: 8px;
+    border-radius: 3.5px;
   }
 
 /* Pagina Creación Perfil */
@@ -211,6 +225,8 @@ table {
     justify-self: left;
     margin-left: 5vw;
     margin-top: 1vh;
+    font-weight: 500;
+    font-size: 20px;
 }
 .newProfileImage{
     display:flex;
@@ -280,5 +296,6 @@ table {
     color: #FEFEFE;
     border-radius: 4px;
     border: none;
+    letter-spacing: 1.25px;
 }
 }

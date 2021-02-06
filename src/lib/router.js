@@ -1,13 +1,14 @@
 import { login } from "./view/templateLogin.js";
-import { home } from "./view/templateHome.js";
+// import { home } from "./view/templateHome.js";
 import { newProfile } from "./view/templateCreateProfile.js";
 import { profile } from "./view/templateShowProfile.js";
+import { test } from "./view/templatePrueba.js";
 
 export const changeRouter = (hash) => {
     if (hash === '#/register') {
         return showTemplate(hash);
     }
-    else if (hash === '#/home') {
+    else if (hash === '#/test') { //recordar que se debe cambiar a #/home
         return showTemplate(hash);
     }
     else if (hash === '#/createProfile') {
@@ -30,8 +31,8 @@ export const showTemplate = (hash) => {
     else if (hash === '#/createProfile') {
         containerRoot.appendChild(newProfile());
     }
-    else if (hash === '#/home') {
-        containerRoot.appendChild(home());
+    else if (hash === '#/test') {
+        containerRoot.appendChild(test());
     }
     else if (hash === '#/showProfile') {
         containerRoot.appendChild(profile());
