@@ -29,8 +29,9 @@ export const profile = () => {
 divProfile.innerHTML = viewProfile;
 
 const firestore = firebase.firestore();
-const currentUserData = firebase.auth().currentUser;
+let currentUserData = firebase.auth().currentUser;
 const uid = currentUserData.uid;
+
 
 firestore.collection('users').doc(uid).get().then(function(doc){
     if (doc.exists) {

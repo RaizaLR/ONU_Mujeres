@@ -3,6 +3,8 @@ import { home } from "./view/templateHome.js";
 import { newProfile } from "./view/templateCreateProfile.js";
 import { profile } from "./view/templateShowProfile.js";
 import { test } from "./view/templatePrueba.js";
+import { newChannel } from "./view/templateNewChannel.js";
+import { viewChannel } from "./view/templateViewChannel.js";
 
 export const changeRouter = (hash) => {
     if (hash === '#/register') {
@@ -18,6 +20,12 @@ export const changeRouter = (hash) => {
         return showTemplate(hash);
     }
     else if (hash === '#/home') {
+        return showTemplate(hash);
+    }
+    else if (hash === '#/newChannel') {
+        return showTemplate(hash);
+    }
+    else if (hash === '#/viewChannel') {
         return showTemplate(hash);
     }
     else {
@@ -42,6 +50,12 @@ export const showTemplate = (hash) => {
     }
     else if (hash === '#/home') {
         containerRoot.appendChild(home());
+    }
+    else if (hash === '#/newChannel') {
+        containerRoot.appendChild(newChannel());
+    }
+    else if (hash === '#/viewChannel') {
+        containerRoot.appendChild(viewChannel());
     }
     else { 
         containerRoot.innerHTML = "la página no existe";

@@ -38,6 +38,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+    font-family: roboto;
+
 }
 ol, ul {
 	list-style: none;
@@ -362,4 +364,331 @@ margin-bottom: 4vh;
     border: none;
     letter-spacing: 1.25px;
 }
+
+/* Pagina principal */
+/* .menu {
+    display: flex;
+    flex-direction: row;
+    background-color: #22335e;
+    height: 56px;
+  }
+  .lateralMenu {
+    margin-top: 22px;
+    display: flex;
+    justify-self: baseline;
+    margin-left: 19px;
+    height: 18px;
+    width: 25px;
+  }
+  .mainTitle {
+    margin-top: 22px;
+    display: flex;
+    justify-self: baseline;
+    margin-left: 35px;
+    color: #fff;
+    font-size: 20px;
+  }
+  
+  .channelBtns {
+    display: flex;
+    background-color: #22335e;
+    height: 48px;
+    justify-content: space-between;
+  }
+  
+  .channelBtn {
+    display: flex;
+    color: #fff;
+    margin-top: 16px;
+    text-decoration: none;
+    margin-left: 34.62px;
+  }
+  
+  .chatBtn {
+    display: flex;
+    color: #fff;
+    margin-top: 16px;
+    text-decoration: none;
+    margin-right: 65.62px;
+  }
+  
+  .searchBarBackground {
+    background-color: #e0e0e0;
+    height: 39px;
+  } */
+
+  .content-all{
+    width: 100%;
+    max-width: 1000px;
+}
+
+header{
+    /* width: 500px; */
+    height: 55px;
+    /* position: fixed; */
+    left: 0;
+    top: 0;
+    background-color: #22335E;
+}
+
+#check{
+    display: none;
+}
+
+#check:checked ~ .menu{
+    width: 300px;
+}
+
+.menu{
+    position: fixed;
+    top: 50px;
+    width: 0px;
+    height: 100%;
+    background-color: #22335E;
+    transition: all 500ms cubic-bezier(1,0,0,1);
+    transition-timing-function: cubic-bezier(1,0,0,1);
+    overflow: hidden;
+}
+.menuFirstSection{
+  border-bottom: 1px solid #979797;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+.menuSecondSection{
+  border-bottom: 1px solid #979797;
+  padding-top: 30px;
+  padding-bottom: 120px;
+}
+.menuThirdSection{
+  /* border-bottom: 1px solid #979797; */
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.menu li{
+    list-style: none;
+    padding: 16px;
+    color: white;
+    cursor: pointer;
+    transition: all 300ms;
+    display: block;
+    width: 500px;
+}
+/* .content-all  */
+.menuButton{
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    top: -35px;
+    padding: 15px;
+    color: white;
+    cursor: pointer;
+}
+.mainTitle{
+  position: relative;
+  margin-top: -50px;
+  margin-left: 70px;
+  color: #ffffff;
+}
+
+.channelBtns{
+  background-color: #22335E;
+  display: flex;
+  /* justify-content: center; */
+  margin-top: 17px;
+  padding: 5px;
+  /* width: 500px; */
+}
+.channelButton{
+  /* width: 10%; */
+  padding-left: 40px;
+}
+#channelBtn{
+  background-color: #22335E;
+  border-color: #22335E;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 2px;
+  outline: 2px;
+}
+.chatButton{
+  /* width: 10%; */
+  padding-left: 40px;
+}
+#chatBtn{
+  background-color: #22335E;
+  border-color: #22335E;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 2px;
+   outline: 2px;
+}
+.searchbarContainer{
+background-color: #E0E0E0;
+}
+.searchInput{
+  background-image: url(img/lupa.svg);
+  background-repeat: no-repeat;
+  background-position: 96% 50%;
+  /* border: none; */
+  border-color: #ffffff;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+}
+.searchInput:focus{
+  outline: 2px;
+  border-color: #1A73E8;
+}
+  
+  .searchBarChannels {
+    width: 336px;
+    height: 26px;
+    margin: 7px 16px 7px 8px;
+    border-radius: 20px;
+    font-size: 16px;
+  }
+  
+  .channelBox {
+    margin-top: 14px;
+    max-height: 400px;
+    overflow-y: scroll;
+    
+  }
+  
+  .channelContainer{
+      height: 91px;
+    border-bottom: 1px solid #212121;
+  }
+
+  .channelTitle {
+    font-size: 18px;
+    margin-left: 16px;
+    /* padding: 10px; */
+    padding-top: 15px;
+  }
+  
+  .channelDescription {
+    font-size: 12px;
+    color: rgb(94, 91, 91);
+    margin-left: 16px;
+    padding: 5px;
+  }
+  
+  .newChannelButton {
+    /* position: fixed; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 25px;
+  }
+  /* pagina nuevo canal */
+  
+  .channelHeader {
+    display: flex;
+    justify-content: space-between;
+    background-color: #22335e;
+    color: #fefefe;
+    height: 56px;
+  }
+  
+  .backchannelBtn {
+    height: 12px;
+    width: 7.41px;
+    margin-top: 25px;
+    margin-left: 24px;
+  }
+  
+  .newChannelTitle {
+    margin-top: 16px;
+    font-size: 20px;
+    margin-left: 30px;
+  }
+  
+  .newChannelBtn {
+    margin-top: 25px;
+    font-size: 12px;
+    margin-right: 45px;
+  }
+  
+  .newChannelMain {
+    margin-top: 70.45px;
+  }
+  
+  .newChannelLabel {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin-left: 15px;
+    font-size: 18px;
+  }
+  
+  .newChannelInput {
+    display: flex;
+    flex-direction: column;
+    width: 326px;
+    height: 54px;
+    margin-left: 15px;
+    font-size: 14px;
+  }
+  
+  .newChannelCheckBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-right: 25px;
+  }
+  
+  /* pagina visualización canales */
+  .viewChannelHeader{
+      display: flex;
+      justify-content: space-between;
+      background-color: #22335e;
+      color: #fefefe;
+      height: 56px;
+  }
+  .channelMenu{
+      margin-top:20px;
+      margin-right: 20px;
+      width: 4px;
+      height: 16px;
+  }
+  
+  .mainChannel{
+      margin-top: 26px;
+  }
+  
+  .generalDescriptionChannel{
+      margin-top:20px;
+      margin-left: 16px;
+      margin-right: 16px;
+      font-size: 14px;
+  }
+  
+  .addChannel{
+      margin-top:94px;
+      margin-bottom: 43px;
+      display: flex;
+      justify-content: space-around;
+  }
+  
+  .activeProfile{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-right: 80px;
+  }
+  
+  .addpostBar{
+      display: flex;
+      justify-content: flex-end;
+      width: 100vw;
+      margin-top:72px;
+      height: 56px;
+  }
 }

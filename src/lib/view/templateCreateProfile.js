@@ -51,7 +51,7 @@ export const newProfile = () => {
   </div>
 
   <div class="newProfileBtn">
-  <button id="newProfileBtn" class="profileButton">SIGUIENTE</button></div><br>
+   <button id="newProfileBtn" class="profileButton">SIGUIENTE</button></div><br>
   <a id="showProfile" href="#/showProfile">Ver perfil</a><br>
   
 `
@@ -64,18 +64,14 @@ export const newProfile = () => {
 
   let showProfilePicture=()=>{ 
     var user = firebase.auth().currentUser;
-  //   let newImgURL= storage.ref("usersProfileImgs/profile_image.svg");
-  // newImgURL.getDownloadURL().then((url) => {
-  //   user.updateProfile({
-  //     photoURL: url
-  //   }).then(function() {
-      divNewProfile.querySelector("#profileImage").src = user.photoURL;
-    // }).catch(function(error) {
-    //   // An error happened.
-    // });
-
-  // })
-  
+    if(user.photoURL=== null){
+      user.updateProfile({
+        photoURL: "img/profile_image.svg"
+      }).then(function() {
+        divNewProfile.querySelector("#profileImage").src = user.photoURL;
+      })    }
+    else{ 
+      divNewProfile.querySelector("#profileImage").src = user.photoURL}
 }
 
 window.onload = showProfilePicture();
