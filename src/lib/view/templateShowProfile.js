@@ -2,15 +2,14 @@ export const profile = () => {
     const divProfile = document.createElement("div"); 
     divProfile.setAttribute("CLASS","viewprofile");
     const viewProfile =` 
-    <h4 id="">Mi perfil</h4>
-    <img src="" alt="">
-    <h1 id="profileName"></h1>
-    <p>
-        Ciudad<br>
+    <img src="./img/chevron_left_24px.png" alt="atrás" class="backBtn">
+    <h4 class="profileTitle">Mi perfil</h4>
+    <img src="" alt="" id="profilePic" class="newProfileImage">
+    <div class="profileContentDiv">
+    <h1 id="profileName" class="viewProfileName"></h1>
+    <p class="profileContent">
+        <span id="profileOccupation"></span><br>
         <span id="profileCity"></span><br><br>
-
-        Ocupación<br>
-        <span id="profileOccupation"></span><br><br>
 
         Instagram<br>
         <span id="profileInstagram"></span><br><br>
@@ -21,9 +20,11 @@ export const profile = () => {
         Sobre mi<br>
         <span id="profileAboutMe"></span><br>
     </p>
-
-    <button><a href="#/test">LISTO</a></button>
-`
+    </div>
+    <div class="btnsContainer">
+    <button class="profileButton"><a href="#/createProfile">EDITAR</a></button>  <button class="profileButton"><a href="#/home">GUARDAR</a></button>
+    </div>
+    `
 
 divProfile.innerHTML = viewProfile;
 
@@ -39,6 +40,7 @@ firestore.collection('users').doc(uid).get().then(function(doc){
         divProfile.querySelector("#profileFacebook").innerHTML = doc.data().facebook;
         divProfile.querySelector("#profileAboutMe").innerHTML = doc.data().aboutMe;
         divProfile.querySelector("#profileOccupation").innerHTML = doc.data().occupation;
+        divProfile.querySelector("#profilePic").src = currentUserData.photoURL;
     } else {
         console.log("No such document!");
     }

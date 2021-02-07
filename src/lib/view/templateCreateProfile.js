@@ -4,7 +4,13 @@ export const newProfile = () => {
   const viewNewProfile = ` 
   <img src="./img/chevron_left_24px.png" alt="atrás" class="backBtn">
   <div class= "profileTitle"><h3>Crear Perfil</h3></div><br>
-  <img src="./img/profile_image.png" alt="" class="newProfileImage"><br>
+  <img src="" alt="" class="newProfileImage" id="profileImage"><br>
+
+  <div class="custom-input-file">
+  <input type="file" id="imgFile" class="input-file" value="">
+  +
+  </div>
+
   <div class="scroll-container">
 
   <div class="loginEmailInputContainer">
@@ -51,8 +57,30 @@ export const newProfile = () => {
 `
 
   divNewProfile.innerHTML = viewNewProfile;
+  const firestore = firebase.firestore();
+  const currentUserData = firebase.auth().currentUser;
+  const uid = currentUserData.uid;
+  const storage = firebase.storage();
 
+  let showProfilePicture=()=>{ 
+    var user = firebase.auth().currentUser;
+  //   let newImgURL= storage.ref("usersProfileImgs/profile_image.svg");
+  // newImgURL.getDownloadURL().then((url) => {
+  //   user.updateProfile({
+  //     photoURL: url
+  //   }).then(function() {
+      divNewProfile.querySelector("#profileImage").src = user.photoURL;
+    // }).catch(function(error) {
+    //   // An error happened.
+    // });
+
+  // })
   
+}
+
+window.onload = showProfilePicture();
+
+
   const newProfileBtn = divNewProfile.querySelector("#newProfileBtn");
   newProfileBtn.addEventListener("click", () => {
     let userName = divNewProfile.querySelector("#name").value;
@@ -62,11 +90,7 @@ export const newProfile = () => {
     let instagram = divNewProfile.querySelector("#instagram").value;
     let facebook = divNewProfile.querySelector("#facebook").value;
     let aboutMe = divNewProfile.querySelector("#aboutMe").value;
-  
-    const firestore = firebase.firestore();
-    const currentUserData = firebase.auth().currentUser;
-    const uid = currentUserData.uid;
-  firestore.collection('users').doc(uid).set({name: userName,
+    firestore.collection('users').doc(uid).set({name: userName,
     lastname: lastName,
     city: city,
     occupation: occupation,
@@ -76,9 +100,34 @@ export const newProfile = () => {
     userID: uid,}).then(()=>{
     location.assign("#/showProfile");
     console.log(firestore.collection('users'));
-    });
+    }); 
   });
  
+  let addFileBtn = divNewProfile.querySelector("#imgFile");
+  addFileBtn.addEventListener("change", () => {
+    let file = divNewProfile.querySelector("#imgFile").files[0];
+      uploadImg(file)});
+
+let uploadImg=(file)=> {
+  let storageRef = firebase.storage().ref('usersProfileImgs/' + uid);
+ storageRef.put(file).then(function(snapshot) {
+  showImg();
+})}
+
+
+let showImg=()=>{ 
+  var user = firebase.auth().currentUser;
+    let newImgURL= storage.ref(`usersProfileImgs/${uid}`);
+  newImgURL.getDownloadURL().then((url) => {
+    user.updateProfile({
+      photoURL: url
+    }).then(function() {
+      divNewProfile.querySelector("#profileImage").src = user.photoURL;
+      // console.log("Update successful")
+    }).catch(function(error) {
+      // An error happened.
+    });})}
+
 
 return divNewProfile;
       }
