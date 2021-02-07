@@ -291,6 +291,13 @@ table {
     color: #FEFEFE;
     border-radius: 4px;
     border: none;
+    letter-spacing: 1.25px;
+}
+
+.link{
+    text-decoration: none;
+    color: #FEFEFE;
+    letter-spacing: 1.25px;
 }
 
 .btnsContainer{

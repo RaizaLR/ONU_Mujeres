@@ -22,7 +22,7 @@ export const profile = () => {
     </p>
     </div>
     <div class="btnsContainer">
-    <button class="profileButton"><a href="#/createProfile">EDITAR</a></button>  <button class="profileButton"><a href="#/home">GUARDAR</a></button>
+    <button class="profileButton"><a href="#/createProfile" class="link">EDITAR</a></button>  <button class="profileButton"><a href="#/home" class="link">GUARDAR</a></button>
     </div>
     `
 
