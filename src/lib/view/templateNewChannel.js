@@ -1,6 +1,6 @@
-export const newChannel = () =>{
-    const divNewChannel = document.createElement("div");
-    const viewNewChannel = `
+export const newChannel = () => {
+  const divNewChannel = document.createElement("div");
+  const viewNewChannel = `
     <header class="channelHeader">
     <img src="./img/backwhite.svg" alt="atrás" class="backchannelBtn">
     <h3 class="newChannelTitle">Nueva Comunidad</h3>
@@ -18,29 +18,37 @@ export const newChannel = () =>{
     <input type="checkbox" id="checkBox">
     </div>
   </main>
-    `
-    divNewChannel.innerHTML=viewNewChannel;
+    `;
+  divNewChannel.innerHTML = viewNewChannel;
 
-    const newChannelBtn = divNewChannel.querySelector("#newChannelBtn");
+  const newChannelBtn = divNewChannel.querySelector("#newChannelBtn");
   newChannelBtn.addEventListener("click", () => {
     let channelName = divNewChannel.querySelector("#newChannelName").value;
-    let descriptionChannel = divNewChannel.querySelector("#descriptionChannel").value;
+    let descriptionChannel = divNewChannel.querySelector("#descriptionChannel")
+      .value;
     let checkbox = divNewChannel.querySelector("#checkBox").value;
-  
+
     const firestore = firebase.firestore();
     const currentUserData = firebase.auth().currentUser;
     const uid = currentUserData.uid;
-  firestore.collection('channels').doc(channelName).set({
-      channelName: channelName,
-      description: descriptionChannel,
-      public: checkbox,
-    userID: uid,
-}).then(()=>{
-    location.assign("#/viewChannel");
-    console.log(firestore.collection('channels'));
-    });
+    let d = new Date();
+    let n = d.getHours() + ":" + d.getMinutes();
+    firestore
+      .collection("channels")
+      .doc(channelName)
+      .set({
+        channelName: channelName,
+        description: descriptionChannel,
+        public: checkbox,
+        userID: uid,
+        creationHour: n,
+      })
+      .then(() => {
+        location.assign("#/viewChannel");
+        console.log(firestore.collection("channels"));
+      });
   });
- //aqui quiero agregar un catch para cuando el nombre de canal exista
+  //aqui quiero agregar un catch para cuando el nombre de canal exista
 
-    return divNewChannel;
-}
+  return divNewChannel;
+};

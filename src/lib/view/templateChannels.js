@@ -28,20 +28,23 @@ export const channel = () =>{
              console.log("holi");
              let channelContainer = document.createElement("DIV");
             let channelTitle = document.createElement("H3");
-            console.log(channelTitle);
             let channelDescription = document.createElement("P");
-            console.log(channelDescription);
+            let channelHour = document.createElement("P");
             channelContainer.setAttribute("id", "channelContainer");
             channelContainer.setAttribute("class", "channelContainer");
             channelTitle.setAttribute("id", "channelTitle");
             channelTitle.setAttribute("class", "channelTitle");
             channelDescription.setAttribute("id", "channelDescription");
             channelDescription.setAttribute("class", "channelDescription");
+            channelHour.setAttribute("class","channelHour");
+            channelHour.setAttribute("id", "channelHour");
             channelTitle.innerHTML = channels.channelName;
             channelDescription.innerHTML = channels.description;
+            channelHour.innerHTML = channels.creationHour;
             channelList.appendChild(channelContainer)
             channelContainer.appendChild(channelTitle);
             channelContainer.appendChild(channelDescription);
+            channelContainer.appendChild(channelHour);
 }
   
 //    <div id="channelBox" class="channelBox">
