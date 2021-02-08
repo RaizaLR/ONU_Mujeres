@@ -4,7 +4,7 @@ export const profile = () => {
     const viewProfile =` 
     <img src="./img/chevron_left_24px.png" alt="atrás" class="backBtn">
     <h4 class="profileTitle">Mi perfil</h4>
-    <img src="" alt="" id="profilePic" class="newProfileImage">
+    <img src="" alt="" id="profilePic" class="viewProfileImage">
     <div class="profileContentDiv">
     <h1 id="profileName" class="viewProfileName"></h1>
     <p class="profileContent">

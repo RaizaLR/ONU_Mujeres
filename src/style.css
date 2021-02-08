@@ -234,8 +234,8 @@ table {
     display:flex;
     justify-self: center;
     align-self: center;
-    width: 180px;
-    height: 180px;
+    width: 128px;
+    height: 128px;
     border-radius: 100%;
 }
 
@@ -244,20 +244,21 @@ table {
     justify-self: center;
     align-items:center;
     justify-content: center;
+    margin-top: 2vh;
 }
 
 .custom-input-file {
     background-color: #5493C4;
     color: #fff;
     cursor: pointer;
-    font-size: 10vh;
-    height: 40px;
+    font-size: 6vh;
+    height: 20px;
     padding: 10px;
     position: absolute;
-    left: 220px;
-    top: 190px;
+    left: 210px;
+    top: 160px;
     text-align: center;
-    width: 40px;
+    width: 20px;
     border-radius: 100%;
     display: flex;
     justify-content: center;
@@ -265,18 +266,17 @@ table {
   }
   
   .custom-input-file .input-file {
-   /* border: 10000px solid transparent; */
    cursor: pointer;
    font-size: 10vh;
    margin: 0;
    opacity: 0;
    outline: 0 none;
    padding: 0;
-    width: 50px;
-   height: 50px; 
-   position: absolute; 
-   left: 5px;
-   top: 5px;
+   width: 40px;
+   height: 40px;
+   position: absolute;
+   left: 1px;
+   top: 2px;
   }
 
 #showProfile{
@@ -320,10 +320,9 @@ justify-content: space-around;
 }
 
 .scroll-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items:center;
+  height: 305px;
+  overflow-y: auto;
+  margin-top: 2vh;
 }
 
 .viewprofile{
@@ -338,6 +337,16 @@ font-weight: normal;
 font-size: 34px;
 line-height: 36px;
 color: rgba(0, 0, 0, 0.87);
+}
+
+.viewProfileImage{
+    display:flex;
+    justify-self: center;
+    align-self: center;
+    width: 164px;
+    height: 164px;
+    border-radius: 100%;
+    margin-top: 2vh;
 }
 
 .profileContent{
@@ -564,7 +573,6 @@ background-color: #E0E0E0;
     margin-top: 14px;
     max-height: 400px;
     overflow-y: scroll;
-    
   }
   
   .channelContainer{

@@ -48,7 +48,7 @@ export const newProfile = () => {
   <span class="loginEmailTextInput">Sobre mi</span>
   <label for=""class="loginEmailTextInput2">Cuentanos algo sobre ti</label><br><br>
   </div>
-  </div>
+  </div>  
 
   <div class="newProfileBtn">
    <button id="newProfileBtn" class="profileButton">SIGUIENTE</button></div><br>
