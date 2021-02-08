@@ -18,33 +18,25 @@ export const channel = () =>{
         firestore.collection("channels").get().then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
                 let channels = doc.data()
-                    console.log((doc.id, " => ",channels.channelName));
                     printChannels(channels);
             });
         });
     
         function printChannels(channels){
-            console.log(channelList);
-             console.log("holi");
              let channelContainer = document.createElement("DIV");
             let channelTitle = document.createElement("H3");
             let channelDescription = document.createElement("P");
-            let channelHour = document.createElement("P");
             channelContainer.setAttribute("id", "channelContainer");
             channelContainer.setAttribute("class", "channelContainer");
             channelTitle.setAttribute("id", "channelTitle");
             channelTitle.setAttribute("class", "channelTitle");
             channelDescription.setAttribute("id", "channelDescription");
             channelDescription.setAttribute("class", "channelDescription");
-            channelHour.setAttribute("class","channelHour");
-            channelHour.setAttribute("id", "channelHour");
             channelTitle.innerHTML = channels.channelName;
             channelDescription.innerHTML = channels.description;
-            channelHour.innerHTML = channels.creationHour;
             channelList.appendChild(channelContainer)
             channelContainer.appendChild(channelTitle);
             channelContainer.appendChild(channelDescription);
-            channelContainer.appendChild(channelHour);
 }
   
 //    <div id="channelBox" class="channelBox">
@@ -54,7 +46,6 @@ export const channel = () =>{
 
    const newChannel = divChannel.querySelector("#newChannelButton");
    newChannel.addEventListener("click", () => {
-       console.log("hola")
        location.assign("#/newChannel")
    })
 

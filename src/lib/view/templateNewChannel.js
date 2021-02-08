@@ -33,6 +33,7 @@ export const newChannel = () => {
     const uid = currentUserData.uid;
     let d = new Date();
     let n = d.getHours() + ":" + d.getMinutes();
+    let p = Date.now();
     firestore
       .collection("channels")
       .doc(channelName)
@@ -42,10 +43,11 @@ export const newChannel = () => {
         public: checkbox,
         userID: uid,
         creationHour: n,
+        creation: p,
       })
       .then(() => {
         location.assign("#/viewChannel");
-        console.log(firestore.collection("channels"));
+        // console.log(firestore.collection("channels"));
       });
   });
   //aqui quiero agregar un catch para cuando el nombre de canal exista

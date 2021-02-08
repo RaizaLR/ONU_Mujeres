@@ -691,6 +691,12 @@ background-color: #E0E0E0;
       display: flex;
       justify-content: space-around;
   }
+
+  .imageActiveUser{
+    width: 56px;
+    height: 56px;
+    border-radius: 100%;
+  }
   
   .activeProfile{
       display: flex;
@@ -702,8 +708,10 @@ background-color: #E0E0E0;
   .addpostBar{
       display: flex;
       justify-content: flex-end;
-      width: 100vw;
-      margin-top:72px;
-      height: 56px;
+      width: 90vw;
+  }
+  .footer{
+    display: flex;
+    flex-direction: row;
   }
 }

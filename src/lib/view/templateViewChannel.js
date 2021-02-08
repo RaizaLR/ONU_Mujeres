@@ -7,18 +7,11 @@ export const viewChannel = () =>{
  <img src="./img/pointmenu.svg" alt="" class="channelMenu">
 </header>
 <main class="mainChannel">
-<h3 id="nameChannelTitle" class="nameChannelTitle">Aqui tambien</h3>
- <p class="generalDescriptionChannel">Creaste esta comunidad hoy. Este es el principio de la comunidad.</p>
-<div class="addChannel">
- <img src="./img/AddDescription.svg" alt="">
- <img src="./img/AddPeople.svg" alt="">
- </div>
- <div class="activeProfile">
- <img src="" alt="fotito" id="imageActiveUser"><p id="activeUser">nombre</p>
- </div>
- </main>
- <footer>
- <input type="textarea" class="addpostBar">
+
+</main>
+ <footer class="footer">
+ <input type="textarea" class="addpostBar" id="sendMessage" placeholder="Enviar Mensaje">
+ <img src="img/Clip.svg" alt="adjuntar"><img src="img/sendArrow.svg" alt="enviar">
  </footer>
  `
 
@@ -27,10 +20,16 @@ export const viewChannel = () =>{
     const firestore = firebase.firestore();
     const currentUserData = firebase.auth().currentUser;
     const uid = currentUserData.uid;
+
+    let channelsRef = firestore.collection('channels');
+    let query = channelsRef.where("uid", "==", uid);
+
+    console.log(query);
     
-    firestore.collection('channels').doc("channelName"+uid).get().then(function(doc){
+    firestore.collection('channels').doc().get().then(function(doc){
         if (doc.exists) {
-            divViewChannel.querySelectorAll(".nameChannelTitle").innerHTML = (doc.data().channelName);
+            console.log(doc)
+            // divViewChannel.querySelectorAll(".nameChannelTitle").innerHTML = (doc.data().channelName);
             
         } else {
             console.log("No such document!");
@@ -41,7 +40,7 @@ export const viewChannel = () =>{
  
     firestore.collection('users').doc(uid).get().then(function(doc){
         if (doc.exists) {
-            divViewChannel.querySelector("#activeUser").innerHTML = doc.data().name + " " + doc.data().lastname;
+            // divViewChannel.querySelector("#activeUser").innerHTML = doc.data().name + " " + doc.data().lastname;
         } else {
             console.log("No such document!");
         }
@@ -50,3 +49,12 @@ export const viewChannel = () =>{
     });
     return divViewChannel; 
 }
+// {/* <h3 id="nameChannelTitle" class="nameChannelTitle">Aqui tambien</h3>
+//  <p class="generalDescriptionChannel">Creaste esta comunidad hoy. Este es el principio de la comunidad.</p>
+// <div class="addChannel">
+//  <img src="./img/AddDescription.svg" alt="">
+//  <img src="./img/AddPeople.svg" alt="">
+//  </div>
+//  <div class="activeProfile">
+//  <img src="" alt="fotito" id="imageActiveUser"><p id="activeUser">nombre</p>
+//  </div> */}
