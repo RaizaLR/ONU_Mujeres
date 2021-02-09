@@ -708,10 +708,11 @@ background-color: #E0E0E0;
   .addpostBar{
       display: flex;
       justify-content: flex-end;
-      width: 90vw;
+      width: 80vw;
   }
   .footer{
     display: flex;
     flex-direction: row;
+    margin-top: 450px;
   }
 }

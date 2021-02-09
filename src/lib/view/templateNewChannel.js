@@ -46,7 +46,13 @@ export const newChannel = () => {
         date: p,
       })
       .then(() => {
-        location.assign("#/viewChannel");
+        firestore.collection("channels").doc(channelName)
+                .collection("messages").doc('message1').set({
+                  content: "hola mundo",
+                  userid: uid
+                }).then(() => {
+                  location.assign("#/viewChannel");
+                });
         // console.log(firestore.collection("channels"));
       });
   });
