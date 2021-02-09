@@ -7,7 +7,7 @@ export const viewChannel = () =>{
  <img src="./img/pointmenu.svg" alt="" class="channelMenu">
 </header>
 
-<main class="mainChannelContent">
+<main class="mainChannelContent" id="channelContent">
 </main>
 
  <footer class="footer">
@@ -29,7 +29,7 @@ export const viewChannel = () =>{
     .get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
-            console.log(doc.id, " => ", doc.data());
+            // console.log(doc.id, " => ", doc.data());
             divViewChannel.querySelector("#nameChannelTitle").innerHTML = doc.data().channelName;
         });
     })
@@ -41,17 +41,31 @@ export const viewChannel = () =>{
     const sendMessage = divViewChannel.querySelector("#send");
     sendMessage.addEventListener("click", ()=>{
         let message = divViewChannel.querySelector("#message").value;
-        console.log(message);
         let channelNameRef = divViewChannel.querySelector("#nameChannelTitle").innerHTML;
         firestore.collection("channels").doc(channelNameRef).collection("messages").add({
                     message:message,
                     userID: uid,
                     date: Date.now()
                 }).then(() => {
-                    console.log("documento creado")
-                })
+                    // console.log("documento creado")
+                    firestore.collection("channels").doc(channelNameRef).collection("messages").orderBy("date")
+    .onSnapshot(function(querySnapshot) {
+        let channelContent = divViewChannel.querySelector("#channelContent");
+        channelContent.innerHTML = "";
+        querySnapshot.forEach(function(doc) {
+            let channelContent = divViewChannel.querySelector("#channelContent");
+            channelContent.innerHTML += `<div class="message-box" id="messageBox">
+                             <span class="inputMessage" class="inputMessage">${doc.data().message}</span>
+                           </div>`    ;
+            channelContent.scrollTop = channelContent.scrollHeight;
+        });
+    });
+ })
 
         divViewChannel.querySelector("#message").value = ""; 
+
+
+        
 
     });
     

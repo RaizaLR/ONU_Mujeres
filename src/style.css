@@ -624,6 +624,11 @@ background-color: #E0E0E0;
     margin-left: 30px;
   }
   
+  .mainChannelContent{
+     overflow-y:scroll; 
+    height: 80vh;
+  } 
+
   .newChannelBtn {
     margin-top: 25px;
     font-size: 12px;
@@ -711,8 +716,11 @@ background-color: #E0E0E0;
       width: 80vw;
   }
   .footer{
-    display: flex;
+   display: flex;
     flex-direction: row;
-    margin-top: 450px;
+    margin-top: 10px;
+  }
+  .message-box{
+    padding: 20px;
   }
 }

@@ -49,5 +49,6 @@ export const channel = () =>{
        location.assign("#/newChannel")
    })
 
+
 return divChannel;
 }
