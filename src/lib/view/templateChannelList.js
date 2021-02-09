@@ -1,4 +1,4 @@
-export const channel = () =>{
+export const channelList = () =>{
     const divChannel = document.createElement("div");
     const viewChannel = `
     
