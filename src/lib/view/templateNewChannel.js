@@ -43,7 +43,7 @@ export const newChannel = () => {
         public: checkbox,
         userID: uid,
         creationHour: n,
-        creation: p,
+        date: p,
       })
       .then(() => {
         location.assign("#/viewChannel");
