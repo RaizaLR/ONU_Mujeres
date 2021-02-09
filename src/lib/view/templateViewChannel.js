@@ -21,10 +21,20 @@ export const viewChannel = () =>{
     const currentUserData = firebase.auth().currentUser;
     const uid = currentUserData.uid;
 
-    let channelsRef = firestore.collection('channels');
-    let query = channelsRef.where("uid", "==", uid);
-
-    console.log(query);
+    let channelsRef = firestore.collection("channels");
+    channelsRef.where("userID", "==", uid)
+    .get()
+    .then(function(querySnapshot) {
+        
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+    
     
     firestore.collection('channels').doc().get().then(function(doc){
         if (doc.exists) {
