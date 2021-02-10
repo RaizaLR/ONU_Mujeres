@@ -14,7 +14,7 @@ export const channel = () =>{
   <input type="textarea" class="addpostBar" id="message" placeholder="Enviar Mensaje">
   <img src="img/Clip.svg" alt="adjuntar"><img src="img/sendArrow.svg" alt="enviar" id="send">
   </footer>
-  `
+  `;
  
   divViewChannel.innerHTML=viewChannel;
  

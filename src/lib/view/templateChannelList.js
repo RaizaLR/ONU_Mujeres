@@ -15,26 +15,31 @@ export const channelList = () =>{
     const channelList = divChannel.querySelector("#channelBox");
        
     const firestore = firebase.firestore();
+    
 
         firestore.collection("channels").get().then(function(querySnapshot) {
-            querySnapshot.forEach(function(doc){
-                  let channels = doc.data()
-                    // printChannelList(channels);
-                    channelList.innerHTML += `<div id="channelContainer" class="channelContainer">
-                    <h3 id="channelTitle" class="channelTitle">${channels.channelName}</h3>
-                    <p id="channelDescription" class="channelDescription">${channels.description}</p>
-                    </div>`
-                    
-                    // let channelClick = divChannel.querySelector("#channelTitle");
-                    // channelClick.onclick =function printChannels(channels){
-                    //  console.log("funciona la shit")
-                    //   }
-                    
+            querySnapshot.forEach(function(doc,i){
+                let channels = doc.data()
+                let channelContainer = document.createElement("DIV");
+                let channelTitle = document.createElement("H3");
+                let channelDescription = document.createElement("P");
+                channelContainer.setAttribute("id", "channelContainer");
+                channelContainer.setAttribute("class", "channelContainer");
+                channelTitle.setAttribute("id", "channelTitle");
+                channelTitle.setAttribute("class", "channelTitle");
+                channelDescription.setAttribute("id", "channelDescription");
+                channelDescription.setAttribute("class", "channelDescription");
+                channelTitle.innerHTML = channels.channelName;
+                channelDescription.innerHTML = channels.description;
+                channelList.appendChild(channelContainer)
+                channelContainer.appendChild(channelTitle);
+                channelContainer.appendChild(channelDescription);
+                channelContainer.onclick = function () {
+                    console.log(channels.channelName);
+                  }
             });
         });     
-        //  function printChannels(channels){
-        //         console.log("funciona la shit")
-        //  }
+
         
         // function printChannelList(channels){
         //     channelList.innerHTML += `<div id="channelContainer" class="channelContainer">
@@ -42,10 +47,7 @@ export const channelList = () =>{
         //     <p id="channelDescription" class="channelDescription">${channels.description}</p>
         //     </div>`
         // };
-//    <div id="channelBox" class="channelBox">
-//     <h3 id="channelTitle" class="channelTitle"></h3>
-//     <p id="channelDescription" class="channelDescription"></p>
-//    </div>
+
 
    const newChannel = divChannel.querySelector("#newChannelButton");
    newChannel.addEventListener("click", () => {
