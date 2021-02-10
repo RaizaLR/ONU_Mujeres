@@ -3,11 +3,11 @@ export const viewChannel = () =>{
  const viewChannel = `
  <header class="viewChannelHeader">
  <img src="./img/backwhite.svg" alt="atrás" class="backchannelBtn">
- <h3 id="nameChannelTitle" class="newChannelTitle"></h3>
+ <h3 id="nameViewChannelTitle" class="newChannelTitle"></h3>
  <img src="./img/pointmenu.svg" alt="" class="channelMenu">
 </header>
 
-<main class="mainChannelContent" id="channelContent">
+<main class="mainChannelContent" id="viewChannelContent">
 </main>
 
  <footer class="footer">
@@ -30,7 +30,7 @@ export const viewChannel = () =>{
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             // console.log(doc.id, " => ", doc.data());
-            divViewChannel.querySelector("#nameChannelTitle").innerHTML = doc.data().channelName;
+            divViewChannel.querySelector("#nameViewChannelTitle").innerHTML = doc.data().channelName;
         });
     })
     .catch(function(error) {
@@ -40,8 +40,8 @@ export const viewChannel = () =>{
     
     const sendMessage = divViewChannel.querySelector("#send");
     sendMessage.addEventListener("click", ()=>{
-        let message = divViewChannel.querySelector("#message").value;
-        let channelNameRef = divViewChannel.querySelector("#nameChannelTitle").innerHTML;
+        let message = divViewChannel.querySelector("#message").value
+        let channelNameRef = divViewChannel.querySelector("#nameViewChannelTitle").innerHTML;
         firestore.collection("channels").doc(channelNameRef).collection("messages").add({
                     message:message,
                     userID: uid,
@@ -50,10 +50,10 @@ export const viewChannel = () =>{
                     // console.log("documento creado")
                     firestore.collection("channels").doc(channelNameRef).collection("messages").orderBy("date")
     .onSnapshot(function(querySnapshot) {
-        let channelContent = divViewChannel.querySelector("#channelContent");
+        let channelContent = divViewChannel.querySelector("#viewChannelContent");
         channelContent.innerHTML = "";
         querySnapshot.forEach(function(doc) {
-            let channelContent = divViewChannel.querySelector("#channelContent");
+            let channelContent = divViewChannel.querySelector("#viewChannelContent");
             channelContent.innerHTML += `<div class="message-box" id="messageBox">
                              <span class="inputMessage" class="inputMessage">${doc.data().message}</span>
                            </div>`    ;

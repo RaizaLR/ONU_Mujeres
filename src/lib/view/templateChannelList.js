@@ -1,8 +1,7 @@
-import{ home } from "./templateHome.js";
-import { channel } from "./templateChannel.js"
+import { channel } from "./templateChannel.js";
 export const channelList = () =>{
-    const divChannel = document.createElement("div");
-    const viewChannel = `
+    const divChannelList = document.createElement("div");
+    const viewChannelList = `
     <div id="channelBox" class="channelBox">
     </div>
    <div  class="newChannelButton">
@@ -11,14 +10,12 @@ export const channelList = () =>{
    
     `;
     // Aqui llamar a la data de firebase de canales disponibles y que se visualicen en este template
-    divChannel.innerHTML=viewChannel;
-    const channelList = divChannel.querySelector("#channelBox");
-       
+    divChannelList.innerHTML=viewChannelList;
+    const channelList = divChannelList.querySelector("#channelBox");
     const firestore = firebase.firestore();
     
-
-        firestore.collection("channels").get().then(function(querySnapshot) {
-            querySnapshot.forEach(function(doc,i){
+        firestore.collection("channels").orderBy("date","desc").get().then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc){
                 let channels = doc.data()
                 let channelContainer = document.createElement("DIV");
                 let channelTitle = document.createElement("H3");
@@ -35,25 +32,15 @@ export const channelList = () =>{
                 channelContainer.appendChild(channelTitle);
                 channelContainer.appendChild(channelDescription);
                 channelContainer.onclick = function () {
-                    console.log(channels.channelName);
+                    const root = document.getElementById("root");
+                    root.innerHTML = "";
+                    root.appendChild(channel(channels.channelName));
                   }
             });
         });     
-
-        
-        // function printChannelList(channels){
-        //     channelList.innerHTML += `<div id="channelContainer" class="channelContainer">
-        //     <h3 id="channelTitle" class="channelTitle">${channels.channelName}</h3>
-        //     <p id="channelDescription" class="channelDescription">${channels.description}</p>
-        //     </div>`
-        // };
-
-
-   const newChannel = divChannel.querySelector("#newChannelButton");
+   const newChannel = divChannelList.querySelector("#newChannelButton");
    newChannel.addEventListener("click", () => {
        location.assign("#/newChannel")
    })
-
-
- return divChannel;
+ return divChannelList;
 }

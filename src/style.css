@@ -721,6 +721,6 @@ background-color: #E0E0E0;
     margin-top: 10px;
   }
   .message-box{
-    padding: 20px;
+    /* padding: 20px; */
   }
 }
