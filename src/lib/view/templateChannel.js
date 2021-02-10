@@ -1,4 +1,4 @@
-export const viewChannel = () =>{
+export const channel = () =>{
   const divViewChannel = document.createElement("div");
   const viewChannel = `
   <header class="viewChannelHeader">

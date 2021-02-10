@@ -1,4 +1,5 @@
-import { channel } from "./templateChannels.js"
+import { channel } from "./templateChannel.js"
+import { channelList } from "./templateChannelList.js";
 import { chat } from "./templateChats.js"
 
 export const home = () => {
@@ -61,12 +62,13 @@ divHome.innerHTML = viewHome;
 // let menu = divHome.querySelector("#contentMenu");
 
 let box = divHome.querySelector("#box");
-box.appendChild(channel());
+box.appendChild(channelList());
+// box.appendChild(channel());
 const channelButton = divHome.querySelector("#channelBtn");
 const chatButton = divHome.querySelector("#chatBtn")
 channelButton.addEventListener("click", ()=> {
   box.innerHTML="";
-  box.appendChild(channel());
+  box.appendChild(channelList());
 })
 
 chatButton.addEventListener("click", ()=> {
