@@ -9,13 +9,13 @@ export const profile = () => {
     <h1 id="profileName" class="viewProfileName"></h1>
     <p class="profileContent">
         <span id="profileOccupation"></span><br>
-        <span id="profileCity"></span><br><br>
+        <span id="profileCity"></span><br>
 
         Instagram<br>
-        <span id="profileInstagram"></span><br><br>
+        <span id="profileInstagram"></span><br>
 
         Facebook<br>
-        <span id="profileFacebook"></span><br><br>
+        <span id="profileFacebook"></span><br>
 
         Sobre mi<br>
         <span id="profileAboutMe"></span><br>

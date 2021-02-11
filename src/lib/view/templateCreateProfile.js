@@ -3,7 +3,7 @@ export const newProfile = () => {
   divNewProfile.setAttribute("CLASS","createProfile");
   const viewNewProfile = ` 
   <img src="./img/chevron_left_24px.png" alt="atrás" class="backBtn">
-  <div class= "profileTitle"><h3>Crear Perfil</h3></div><br>
+  <div class= "profileTitle"><h3>Crear Perfil</h3></div>
   <img src="" alt="" class="newProfileImage" id="profileImage"><br>
 
   <div class="custom-input-file">
@@ -16,17 +16,17 @@ export const newProfile = () => {
   <div class="loginEmailInputContainer">
   <input type="text" id="name" class="loginEmailInput" required>
   <span class="loginEmailTextInput">Nombre</span>
-  <label for=""class="loginEmailTextInput2">Solo Letras</label><br><br></div>
+  <label for=""class="loginEmailTextInput2">Campo obligatorio*</label><br><br></div>
 
   <div class="loginEmailInputContainer">
   <input type="text" id="lastname" class="loginEmailInput" required>
   <span class="loginEmailTextInput">Apellido</span>
-  <label for=""class="loginEmailTextInput2">Solo Letras</label><br><br></div>
+  <label for=""class="loginEmailTextInput2">Solo Letras*</label><br><br></div>
 
   <div class="loginEmailInputContainer">
   <input type="text" id="city" class="loginEmailInput" required>
   <span class="loginEmailTextInput">Ciudad</span>
-  <label for=""class="loginEmailTextInput2">Solo Letras</label><br><br></div>
+  <label for=""class="loginEmailTextInput2">Solo Letras*</label><br><br></div>
 
   <div class="loginEmailInputContainer">
   <input type="text" id="occupation" class="loginEmailInput" required>
@@ -51,8 +51,7 @@ export const newProfile = () => {
   </div>  
 
   <div class="newProfileBtn">
-   <button id="newProfileBtn" class="profileButton">SIGUIENTE</button></div><br>
-  <a id="showProfile" href="#/showProfile">Ver perfil</a><br>
+   <button id="newProfileBtn" class="profileButton">SIGUIENTE</button></div>
   
 `
 
@@ -79,25 +78,26 @@ window.onload = showProfilePicture();
 
   const newProfileBtn = divNewProfile.querySelector("#newProfileBtn");
   newProfileBtn.addEventListener("click", () => {
-    let userName = divNewProfile.querySelector("#name").value;
-    let lastName = divNewProfile.querySelector("#lastname").value;
-    let city = divNewProfile.querySelector("#city").value;
-    let occupation = divNewProfile.querySelector("#occupation").value;
-    let instagram = divNewProfile.querySelector("#instagram").value;
-    let facebook = divNewProfile.querySelector("#facebook").value;
-    let aboutMe = divNewProfile.querySelector("#aboutMe").value;
-    firestore.collection('users').doc(uid).set({name: userName,
-    lastname: lastName,
-    city: city,
-    occupation: occupation,
-    instagram: instagram,
-    facebook: facebook,
-    aboutMe: aboutMe,
-    userID: uid,}).then(()=>{
-    location.assign("#/showProfile");
-    console.log(firestore.collection('users'));
-    }); 
-  });
+let userName = divNewProfile.querySelector("#name").value;
+let lastName = divNewProfile.querySelector("#lastname").value;
+let city = divNewProfile.querySelector("#city").value;
+let occupation = divNewProfile.querySelector("#occupation").value;
+let instagram = divNewProfile.querySelector("#instagram").value;
+let facebook = divNewProfile.querySelector("#facebook").value;
+let aboutMe = divNewProfile.querySelector("#aboutMe").value;
+      if(userName !== ""||lastName !== ""|| city !== ""){
+        firestore.collection('users').doc(uid).set({name: userName,
+          lastname: lastName,
+          city: city,
+          occupation: occupation,
+          instagram: instagram,
+          facebook: facebook,
+          aboutMe: aboutMe,
+          userID: uid,}).then(()=>{
+        location.assign("#/showProfile")}
+        )}else{
+      alert("por favor asegúrese de ingresar Nombre, Apellido y Ciudad antes de continuar"); }
+    });
  
   let addFileBtn = divNewProfile.querySelector("#imgFile");
   addFileBtn.addEventListener("change", () => {

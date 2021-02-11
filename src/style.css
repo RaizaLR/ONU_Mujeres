@@ -67,6 +67,7 @@ table {
 
 .root{
     font-family: roboto;
+    margin-bottom: 3.5vh;
 }
 
 /* Pagina Login */
@@ -320,9 +321,9 @@ justify-content: space-around;
 }
 
 .scroll-container{
+  padding-top: 1.8vh;
   height: 305px;
   overflow-y: auto;
-  margin-top: 2vh;
 }
 
 .viewprofile{
@@ -382,56 +383,6 @@ margin-bottom: 4vh;
 }
 
 /* Pagina principal */
-/* .menu {
-    display: flex;
-    flex-direction: row;
-    background-color: #22335e;
-    height: 56px;
-  }
-  .lateralMenu {
-    margin-top: 22px;
-    display: flex;
-    justify-self: baseline;
-    margin-left: 19px;
-    height: 18px;
-    width: 25px;
-  }
-  .mainTitle {
-    margin-top: 22px;
-    display: flex;
-    justify-self: baseline;
-    margin-left: 35px;
-    color: #fff;
-    font-size: 20px;
-  }
-  
-  .channelBtns {
-    display: flex;
-    background-color: #22335e;
-    height: 48px;
-    justify-content: space-between;
-  }
-  
-  .channelBtn {
-    display: flex;
-    color: #fff;
-    margin-top: 16px;
-    text-decoration: none;
-    margin-left: 34.62px;
-  }
-  
-  .chatBtn {
-    display: flex;
-    color: #fff;
-    margin-top: 16px;
-    text-decoration: none;
-    margin-right: 65.62px;
-  }
-  
-  .searchBarBackground {
-    background-color: #e0e0e0;
-    height: 39px;
-  } */
 
   .content-all{
     width: 100%;
@@ -571,7 +522,7 @@ background-color: #E0E0E0;
   
   .channelBox {
     margin-top: 14px;
-    max-height: 400px;
+    height: 54vh;
     overflow-y: scroll;
   }
   
@@ -626,7 +577,7 @@ background-color: #E0E0E0;
   
   .mainChannelContent{
      overflow-y:scroll; 
-    height: 80vh;
+    height: 75vh;
   } 
 
   .newChannelBtn {
@@ -720,7 +671,7 @@ background-color: #E0E0E0;
     flex-direction: row;
     margin-top: 10px;
   }
-  .message-box{
+  /* .message-box{
     /* padding: 20px; */
-  }
+  /* }  */
 }

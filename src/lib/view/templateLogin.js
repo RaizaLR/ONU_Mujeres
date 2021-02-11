@@ -4,7 +4,7 @@ export const login = () => {
     const viewLogin = `
 <img src="./img/chevron_left_24px.png" alt="atrás" class="backBtn">
 
-<div class= "loginTitle"><h3 class="logIn">Iniciar Sesión</h3><img src="./img/spainFlag.png" alt="Español" class="loginFlag"></div>
+<div class= "loginTitle"><h3 class="logIn">Iniciar Sesión</h3></div>
 
 <div class= "loginImage"><img src="./img/logoTuOportunidad.png" alt=""></div><br><br><br><br>
 
@@ -32,6 +32,8 @@ export const login = () => {
 
 divLogin.innerHTML= viewLogin;
 
+
+const firestore = firebase.firestore();
 const loginWithEmail = divLogin.querySelector("#logInBtn");
 loginWithEmail.addEventListener("click",() =>{
     let email = document.getElementById("loginEmail").value;
@@ -39,13 +41,14 @@ loginWithEmail.addEventListener("click",() =>{
     firebase.auth().signInWithEmailAndPassword(email, password)
   .then((user) => {
     var user = firebase.auth().currentUser;
+    const uid = user.uid;
       console.log("usuario entro");
-      if(user.displayName !== null) {
-        location.assign("#/home");
-      }
-      else if (user.displayName === null) {
-        location.assign("#/createProfile");
-      }
+      firestore.collection('users').doc(uid).get().then(function(doc){
+        if (doc.exists) {
+            location.assign("#/home");
+        } else {
+            location.assign("#/createProfile");
+        }});
     // Signed in
     // ...
   })
@@ -64,6 +67,7 @@ let passwordInput = divLogin.querySelector("#loginPassword");
 let eyeIcon = divLogin.querySelector("#eye");
 
 eyeIcon.addEventListener("click", ()=>{
+console.log("hola")
   if(passwordInput.type === "password"){
     passwordInput.type = "text";
     eyeIcon.src = "img/invisible.png";
