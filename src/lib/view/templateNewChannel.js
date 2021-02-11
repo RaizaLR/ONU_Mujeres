@@ -2,7 +2,7 @@ export const newChannel = () => {
   const divNewChannel = document.createElement("div");
   const viewNewChannel = `
     <header class="channelHeader">
-    <img src="./img/backwhite.svg" alt="atrás" class="backchannelBtn">
+    <img src="./img/backwhite.svg" alt="atrás" class="backchannelBtn" id="backchannelBtn">
     <h3 class="newChannelTitle">Nueva Comunidad</h3>
     <a id="newChannelBtn" class="newChannelBtn">Crear</a>
   </header>
@@ -20,6 +20,11 @@ export const newChannel = () => {
   </main>
     `;
   divNewChannel.innerHTML = viewNewChannel;
+
+  const backchannelBtn = divNewChannel.querySelector("#backchannelBtn");
+  backchannelBtn.addEventListener("click", () => {
+    location.assign("#/home");
+  })
 
   const newChannelBtn = divNewChannel.querySelector("#newChannelBtn");
   newChannelBtn.addEventListener("click", () => {

@@ -26,7 +26,7 @@ export const home = () => {
          </div>
          <div class="menuSecondSection">
            <ul>
-             <li>Ver Perfil</li>
+             <li id="showProfileBtn">Ver Perfil</li>
              <li>Indica que estas ausente</li>
              <li>Idioma</li>
              <li>Notificaciones</li>
@@ -75,4 +75,12 @@ chatButton.addEventListener("click", ()=> {
   box.innerHTML="";
   box.appendChild(chat());
 })
+
+let showProfileBtn = divHome.querySelector("#showProfileBtn");
+
+showProfileBtn.addEventListener("click", ()=> {
+location.assign("#/showProfile");
+})
+
+
 return divHome};

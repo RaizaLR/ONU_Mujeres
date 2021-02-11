@@ -4,21 +4,21 @@ export const profile = () => {
     const viewProfile =` 
     <img src="./img/chevron_left_24px.png" alt="atrás" class="backBtn">
     <h4 class="profileTitle">Mi perfil</h4>
-    <img src="" alt="" id="profilePic" class="viewProfileImage">
+    <img src="" alt="imagen de perfil" id="profilePic" class="viewProfileImage">
     <div class="profileContentDiv">
     <h1 id="profileName" class="viewProfileName"></h1>
     <p class="profileContent">
         <span id="profileOccupation"></span><br>
-        <span id="profileCity"></span><br>
+        <span id="profileCity"></span><br><br>
 
         Instagram<br>
-        <span id="profileInstagram"></span><br>
+        <span id="profileInstagram"></span><br><br>
 
         Facebook<br>
-        <span id="profileFacebook"></span><br>
+        <span id="profileFacebook"></span><br><br>
 
         Sobre mi<br>
-        <span id="profileAboutMe"></span><br>
+        <span id="profileAboutMe"></span>
     </p>
     </div>
     <div class="btnsContainer">

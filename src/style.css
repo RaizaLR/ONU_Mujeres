@@ -344,8 +344,8 @@ color: rgba(0, 0, 0, 0.87);
     display:flex;
     justify-self: center;
     align-self: center;
-    width: 164px;
-    height: 164px;
+    width: 154px;
+    height: 154px;
     border-radius: 100%;
     margin-top: 2vh;
 }
@@ -358,7 +358,7 @@ font-size: 14px;
 line-height: 20px;
 letter-spacing: 0.25px;
 color: rgba(0, 0, 0, 0.87);
-margin-bottom: 4vh;
+margin-bottom: 2vh;
 }
 
 .profileContentDiv{

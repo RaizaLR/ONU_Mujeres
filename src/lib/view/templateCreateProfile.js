@@ -21,12 +21,12 @@ export const newProfile = () => {
   <div class="loginEmailInputContainer">
   <input type="text" id="lastname" class="loginEmailInput" required>
   <span class="loginEmailTextInput">Apellido</span>
-  <label for=""class="loginEmailTextInput2">Solo Letras*</label><br><br></div>
+  <label for=""class="loginEmailTextInput2">Campo obligatorio*</label><br><br></div>
 
   <div class="loginEmailInputContainer">
   <input type="text" id="city" class="loginEmailInput" required>
   <span class="loginEmailTextInput">Ciudad</span>
-  <label for=""class="loginEmailTextInput2">Solo Letras*</label><br><br></div>
+  <label for=""class="loginEmailTextInput2">Campo obligatorio*</label><br><br></div>
 
   <div class="loginEmailInputContainer">
   <input type="text" id="occupation" class="loginEmailInput" required>
