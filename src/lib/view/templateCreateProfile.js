@@ -86,6 +86,9 @@ let instagram = divNewProfile.querySelector("#instagram").value;
 let facebook = divNewProfile.querySelector("#facebook").value;
 let aboutMe = divNewProfile.querySelector("#aboutMe").value;
       if(userName !== ""||lastName !== ""|| city !== ""){
+        currentUserData.updateProfile({
+          displayName: userName + " " + lastName,
+        }).then(function() {
         firestore.collection('users').doc(uid).set({name: userName,
           lastname: lastName,
           city: city,
@@ -95,7 +98,7 @@ let aboutMe = divNewProfile.querySelector("#aboutMe").value;
           aboutMe: aboutMe,
           userID: uid,}).then(()=>{
         location.assign("#/showProfile")}
-        )}else{
+        )})}else{
       alert("por favor asegúrese de ingresar Nombre, Apellido y Ciudad antes de continuar"); }
     });
  

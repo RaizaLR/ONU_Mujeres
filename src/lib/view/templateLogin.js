@@ -2,7 +2,7 @@ export const login = () => {
     const divLogin = document.createElement("div");   
     divLogin.setAttribute("CLASS","viewLogin");
     const viewLogin = `
-<img src="./img/chevron_left_24px.png" alt="atrás" class="backBtn">
+<a href=""><img src="./img/chevron_left_24px.png" alt="atrás" class="backBtn"></a>
 
 <div class= "loginTitle"><h3 class="logIn">Iniciar Sesión</h3></div>
 

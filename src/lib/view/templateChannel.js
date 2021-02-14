@@ -42,8 +42,13 @@ export const channel = (channelName) =>{
      const sendMessage = divChannel.querySelector("#send");
      sendMessage.addEventListener("click", ()=>{
          if(message.value !== ""){
+            let d = new Date();
+            let n = d.getHours() + ":" + d.getMinutes();
+            
          firestore.collection("channels").doc(channelName).collection("messages").add({
-                     message: message.value,
+                    profileName: currentUserData.displayName,
+                     message: currentUserData.displayName + ": " + message.value,
+                     time: n,
                      userID: uid,
                      date: Date.now()
                  })

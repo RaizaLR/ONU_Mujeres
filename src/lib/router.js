@@ -4,6 +4,7 @@ import { newProfile } from "./view/templateCreateProfile.js";
 import { profile } from "./view/templateShowProfile.js";
 import { newChannel } from "./view/templateNewChannel.js";
 import { viewChannel } from "./view/templateViewChannel.js";
+import { slider } from "./view/slider.js";
 
 export const changeRouter = (hash) => {
     if (hash === '#/register') {
@@ -24,6 +25,9 @@ export const changeRouter = (hash) => {
     else if (hash === '#/viewChannel') {
         return showTemplate(hash);
     }
+    else if (hash === '#/login') {
+        return showTemplate(hash);
+    }
     else {
         return showTemplate(hash);
     }
@@ -33,6 +37,9 @@ export const showTemplate = (hash) => {
     const containerRoot = document.getElementById('root');
     containerRoot.innerHTML="";
      if (hash === '#/' || hash === '' || hash === '#'|| hash === '/') {
+        containerRoot.appendChild(slider());
+    }
+    else if (hash === '#/login') {
         containerRoot.appendChild(login());
     }
     else if (hash === '#/createProfile') {
