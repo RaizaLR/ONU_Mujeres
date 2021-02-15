@@ -21,8 +21,10 @@ export const home = () => {
       <div class="menuFirstSection">
         <ul>
           <img src="" alt="miniatura foto de perfil" id="profileMiniPic" class="miniViewProfileImage">
+          <div class="userInfoContainer">
           <li id="homeUserName"></li>
           <li id="homeUserMail"></li>
+          </div>
         </ul>    
       </div>
       <div class="menuSecondSection">
@@ -37,7 +39,7 @@ export const home = () => {
         <ul>
         <div class="homeLogoutIconContainer">
           <img src="img/Vector.svg" class="homeLogoutIcon">
-          <li id="LogoutBtn">Cerrar Sesión</li>
+          <li id="logoutBtn">Cerrar Sesión</li>
           </div>
         </ul>
       </div>
@@ -76,7 +78,8 @@ const uid = currentUserData.uid;
 
 firestore.collection('users').doc(uid).get().then(function(doc){
   if (doc.exists) {
-      divHome.querySelector("#homeUserName").innerHTML = currentUserData.displayName;      
+      divHome.querySelector("#homeUserName").innerHTML = currentUserData.displayName;
+      divHome.querySelector("#homeUserMail").innerHTML = currentUserData.email;  
       divHome.querySelector("#profileMiniPic").src = currentUserData.photoURL;
   } else {
       console.log("No such document!");
@@ -86,6 +89,16 @@ firestore.collection('users').doc(uid).get().then(function(doc){
 });
 
 
+    const logoutButton = divHome.querySelector("#logoutBtn");
+    logoutButton.addEventListener("click", () =>{
+    firebase.auth().signOut().then(() => {
+    // Sign-out successful.
+    console.log("se cerró la sesión")
+    location.assign("#/login");
+  }).catch((error) => {
+    // An error happened.
+  });
+})
 
 let box = divHome.querySelector("#box");
 box.appendChild(channelList());

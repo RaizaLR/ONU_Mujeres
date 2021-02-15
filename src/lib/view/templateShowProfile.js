@@ -42,6 +42,7 @@ firestore.collection('users').doc(uid).get().then(function(doc){
         divProfile.querySelector("#profileAboutMe").innerHTML = doc.data().aboutMe;
         divProfile.querySelector("#profileOccupation").innerHTML = doc.data().occupation;
         divProfile.querySelector("#profilePic").src = currentUserData.photoURL;
+        console.log(currentUserData)
     } else {
         console.log("No such document!");
     }
