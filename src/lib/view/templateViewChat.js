@@ -37,6 +37,16 @@ export const viewChat = (participantsName, participantsID) => {
           </div>`    ;
             viewChatContent.scrollTop = viewChatContent.scrollHeight;
         });
+
+        // firestore.collection("chats").doc(participantsID+uid).collection("chats").orderBy("date")
+        // .onSnapshot(function(querySnapshot) {
+        //     viewChatContent.innerHTML = "";
+        //     querySnapshot.forEach(function(doc) {
+        //         viewChatContent.innerHTML += `<div class="message-box" id="messageChatBox">
+        //         <span class="inputMessage" id="inputChatMessage">${doc.data().message}</span>
+        //       </div>`    ;
+        //         viewChatContent.scrollTop = viewChatContent.scrollHeight;
+        //     })})
             
      const sendMessage = divViewChat.querySelector("#sendToChat");
      sendMessage.addEventListener("click", ()=>{
@@ -59,6 +69,7 @@ export const viewChat = (participantsName, participantsID) => {
      backButton.addEventListener("click", ()=> {
         root.innerHTML = "";
         root.appendChild(home());
+        location.assign("#/home");
      });
 
 

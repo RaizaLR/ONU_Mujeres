@@ -43,7 +43,6 @@ export const users = () => {
             let participantsName = usersData.name + " " + usersData.lastname;
             let participantsID = usersData.userID;
             userContent.onclick = function () {
-                console.log("loh vimos en el chah " + usersData.userID)
                 let p = Date.now();
                 firestore
                     .collection("chats")
