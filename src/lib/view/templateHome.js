@@ -1,6 +1,6 @@
 import { channel } from "./templateChannel.js"
 import { channelList } from "./templateChannelList.js";
-import { chat } from "./templateChats.js"
+import { chatList } from "./templateChatList.js"
 
 export const home = () => {
     const divHome = document.createElement("div"); 
@@ -112,7 +112,7 @@ channelButton.addEventListener("click", ()=> {
 
 chatButton.addEventListener("click", ()=> {
   box.innerHTML="";
-  box.appendChild(chat());
+  box.appendChild(chatList());
 })
 
 let showProfileBtn = divHome.querySelector("#showProfileBtn");

@@ -6,10 +6,10 @@ export const channel = (channelName) =>{
   <img src="./img/backwhite.svg" alt="atrás" id="backChannelBtn" class="backchannelBtn">
   <h3 id="nameChannelTitle" class="newChannelTitle"></h3>
   <img src="./img/pointmenu.svg" alt="" class="channelMenu">
- </header>
+  </header>
  
- <main class="mainChannelContent" id="channelContent">
- </main>
+  <main class="mainChannelContent" id="channelContent">
+  </main>
  
   <footer class="footer">
   <input type="textarea" class="addpostBar" id="channelMessage" placeholder="Enviar Mensaje">
@@ -54,8 +54,6 @@ export const channel = (channelName) =>{
                  })
                  message.value="";
         } });
- 
-            
  
      });
      

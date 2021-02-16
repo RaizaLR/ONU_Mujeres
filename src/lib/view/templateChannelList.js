@@ -5,7 +5,7 @@ export const channelList = () =>{
     <div id="channelBox" class="channelBox">
     </div>
    <div  class="newChannelButton">
-   <img src="./img/newComunityBtn.svg"alt="foto" id="newChannelButton">
+   <img src="./img/newChatBtn.svg"alt="foto" id="newChannelButton">
    </div>
    
     `;

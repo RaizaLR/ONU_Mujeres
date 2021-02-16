@@ -96,7 +96,8 @@ let aboutMe = divNewProfile.querySelector("#aboutMe").value;
           instagram: instagram,
           facebook: facebook,
           aboutMe: aboutMe,
-          userID: uid,}).then(()=>{
+          userID: uid,
+          photoURL: currentUserData.photoURL}).then(()=>{
         location.assign("#/showProfile")}
         )})}else{
       alert("por favor asegúrese de ingresar Nombre, Apellido y Ciudad antes de continuar"); }

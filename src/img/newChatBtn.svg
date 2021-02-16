@@ -1,9 +1,9 @@
 <svg width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_ddd)">
-<rect x="10" y="9" width="56" height="56" rx="28" fill="#4D8FC2"/>
+<rect x="10" y="9" width="56" height="56" rx="28" fill="#F2E7FE"/>
 </g>
-<rect x="10" y="9" width="56" height="56" rx="28" fill="white" fill-opacity="0.04"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M38 33C39.1 33 40 32.1 40 31C40 29.9 39.1 29 38 29C36.9 29 36 29.9 36 31C36 32.1 36.9 33 38 33ZM38 35C36.9 35 36 35.9 36 37C36 38.1 36.9 39 38 39C39.1 39 40 38.1 40 37C40 35.9 39.1 35 38 35ZM38 41C36.9 41 36 41.9 36 43C36 44.1 36.9 45 38 45C39.1 45 40 44.1 40 43C40 41.9 39.1 41 38 41Z" fill="#FEFEFE"/>
+<rect x="10" y="9" width="56" height="56" rx="28" fill="#4D8FC2"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M45 38H39V44H37V38H31V36H37V30H39V36H45V38Z" fill="#FEFEFE"/>
 <defs>
 <filter id="filter0_ddd" x="0" y="0" width="76" height="76" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>

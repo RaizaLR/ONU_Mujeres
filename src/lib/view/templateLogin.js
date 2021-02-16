@@ -42,7 +42,6 @@ loginWithEmail.addEventListener("click",() =>{
   .then((user) => {
     var user = firebase.auth().currentUser;
     const uid = user.uid;
-      console.log("usuario entro");
       firestore.collection('users').doc(uid).get().then(function(doc){
         if (doc.exists) {
             location.assign("#/home");

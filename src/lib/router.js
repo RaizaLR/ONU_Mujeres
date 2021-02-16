@@ -5,6 +5,8 @@ import { profile } from "./view/templateShowProfile.js";
 import { newChannel } from "./view/templateNewChannel.js";
 import { viewChannel } from "./view/templateViewChannel.js";
 import { slider } from "./view/slider.js";
+import { users } from "./view/templateUsers.js";
+import { viewChat } from "./view/templateViewChat.js";
 
 export const changeRouter = (hash) => {
     if (hash === '#/register') {
@@ -26,6 +28,12 @@ export const changeRouter = (hash) => {
         return showTemplate(hash);
     }
     else if (hash === '#/login') {
+        return showTemplate(hash);
+    }
+    else if (hash === '#/users') {
+        return showTemplate(hash);
+    }
+    else if (hash === '#/viewChat') {
         return showTemplate(hash);
     }
     else {
@@ -56,6 +64,12 @@ export const showTemplate = (hash) => {
     }
     else if (hash === '#/viewChannel') {
         containerRoot.appendChild(viewChannel());
+    }
+    else if (hash === '#/users') {
+        containerRoot.appendChild(users());
+    }
+    else if (hash === '#/viewChat') {
+        containerRoot.appendChild(viewChat());
     }
     else { 
         containerRoot.innerHTML = "la página no existe";
