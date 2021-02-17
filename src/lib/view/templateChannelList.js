@@ -9,11 +9,10 @@ export const channelList = () =>{
    </div>
    
     `;
-    // Aqui llamar a la data de firebase de canales disponibles y que se visualicen en este template
+    // Aqui llamamos a la data de firebase de canales disponibles para que se visualicen en este template
     divChannelList.innerHTML=viewChannelList;
     const channelList = divChannelList.querySelector("#channelBox");
     const firestore = firebase.firestore();
-    let user = firebase.auth().currentUser;
 
     
         firestore.collection("channels").orderBy("date","desc").get().then(function(querySnapshot) {

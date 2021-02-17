@@ -1,8 +1,9 @@
+import{ home } from "./templateHome.js";
 export const viewChannel = () =>{
  const divViewChannel = document.createElement("div");
  const viewChannel = `
  <header class="viewChannelHeader">
- <img src="./img/backwhite.svg" alt="atrás" class="backchannelBtn">
+ <img src="./img/backwhite.svg" alt="atrás" class="backchannelBtn" id="backHomeBtn">
  <h3 id="nameViewChannelTitle" class="newChannelTitle"></h3>
  <img src="./img/pointmenu.svg" alt="" class="channelMenu">
 </header>
@@ -29,7 +30,6 @@ export const viewChannel = () =>{
     .get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
-            // console.log(doc.id, " => ", doc.data());
             divViewChannel.querySelector("#nameViewChannelTitle").innerHTML = doc.data().channelName;
         });
     })
@@ -37,17 +37,21 @@ export const viewChannel = () =>{
         console.log("Error getting documents: ", error);
     });
     
-    
+
     const sendMessage = divViewChannel.querySelector("#send");
     sendMessage.addEventListener("click", ()=>{
         let message = divViewChannel.querySelector("#message").value
         let channelNameRef = divViewChannel.querySelector("#nameViewChannelTitle").innerHTML;
+        let d = new Date();
+        let n = d.getHours() + ":" + d.getMinutes();
         firestore.collection("channels").doc(channelNameRef).collection("messages").add({
-                    message:message,
-                    userID: uid,
-                    date: Date.now()
+            profileName: currentUserData.displayName,
+            message: message,
+            time: n,
+            userID: uid,
+            date: Date.now(),
+            profilePictureURL: currentUserData.photoURL,
                 }).then(() => {
-                    // console.log("documento creado")
                     firestore.collection("channels").doc(channelNameRef).collection("messages").orderBy("date")
     .onSnapshot(function(querySnapshot) {
         let channelContent = divViewChannel.querySelector("#viewChannelContent");
@@ -55,29 +59,22 @@ export const viewChannel = () =>{
         querySnapshot.forEach(function(doc) {
             let channelContent = divViewChannel.querySelector("#viewChannelContent");
             channelContent.innerHTML += `<div class="message-box" id="messageBox">
-                             <span class="inputMessage" class="inputMessage">${doc.data().message}</span>
-                           </div>`    ;
+                             <span class="input-message" id="inputMessage">${doc.data().message}</span>
+                           </div>`;
             channelContent.scrollTop = channelContent.scrollHeight;
         });
     });
  })
 
         divViewChannel.querySelector("#message").value = ""; 
-
-
-        
-
     });
     
+    let backHomeButton = divViewChannel.querySelector("#backHomeBtn");
+     backHomeButton.addEventListener("click", ()=> {
+        root.innerHTML = "";
+        root.appendChild(home());
+        location.assign("#/home")
+     });
 
     return divViewChannel; 
 }
-// {/* <h3 id="nameChannelTitle" class="nameChannelTitle">Aqui tambien</h3>
-//  <p class="generalDescriptionChannel">Creaste esta comunidad hoy. Este es el principio de la comunidad.</p>
-// <div class="addChannel">
-//  <img src="./img/AddDescription.svg" alt="">
-//  <img src="./img/AddPeople.svg" alt="">
-//  </div>
-//  <div class="activeProfile">
-//  <img src="" alt="fotito" id="imageActiveUser"><p id="activeUser">nombre</p>
-//  </div> */}

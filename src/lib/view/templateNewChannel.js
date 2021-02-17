@@ -53,11 +53,8 @@ export const newChannel = () => {
       .then(() => {
       
                   location.assign("#/viewChannel");
-               
-        // console.log(firestore.collection("channels"));
       });
   });
-  //aqui quiero agregar un catch para cuando el nombre de canal exista
 
   return divNewChannel;
 };

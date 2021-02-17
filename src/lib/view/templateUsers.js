@@ -1,11 +1,12 @@
 import { viewChat } from "./templateViewChat.js";
-
+import { home } from "./templateHome.js";
+import { chatList } from "./templateChatList.js"
 export const users = () => {
     const divUsers = document.createElement("div");
     const viewUsers = `
     <!-- Header fijo -->
     <header class="viewChannelHeader">
-    <img src="./img/backwhite.svg" alt="atrás" id="backChannelBtn" class="backchannelBtn">
+    <img src="./img/backwhite.svg" alt="atrás" id="backToHomeBtn" class="backchannelBtn">
     <h3 class="newChatTitle">Nuevo Chat</h3>
     <img src="./img/pointmenu.svg" alt="" class="channelMenu">
     </header>
@@ -46,27 +47,34 @@ export const users = () => {
                 let p = Date.now();
                 firestore
                     .collection("chats")
-                    .doc(uid+usersData.userID)
+                    .doc(uid + usersData.userID)
                     .set({
                         author: uid,
-                        participants: [uid,usersData.userID],
+                        participants: [uid, usersData.userID],
                         participantsName: usersData.name + " " + usersData.lastname,
+                        participantsPhotoURL: usersData.photoURL,
                         participantsID: usersData.userID,
                         date: p,
                     })
                     .then(() => {
                         let root = document.getElementById("root");
-                        root.innerHTML ="";
+                        root.innerHTML = "";
                         root.appendChild(viewChat(participantsName, participantsID));
-
-                        // console.log(firestore.collection("channels"));
                     });
             };
-    })
-        
         })
 
+    })
+    
+    let backToHomeButton = divUsers.querySelector("#backToHomeBtn");
+    backToHomeButton.addEventListener("click", () => {
+        root.innerHTML = "";
+        root.appendChild(home());
+        location.assign("#/home");
+    })
+        
+    
 
 
-return divUsers;
+    return divUsers;
 }

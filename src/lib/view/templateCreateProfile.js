@@ -123,10 +123,7 @@ let showImg=()=>{
       photoURL: url
     }).then(function() {
       divNewProfile.querySelector("#profileImage").src = user.photoURL;
-      // console.log("Update successful")
-    }).catch(function(error) {
-      // An error happened.
-    });})}
+    })})}
 
 
 return divNewProfile;

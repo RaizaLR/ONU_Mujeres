@@ -48,8 +48,6 @@ loginWithEmail.addEventListener("click",() =>{
         } else {
             location.assign("#/createProfile");
         }});
-    // Signed in
-    // ...
   })
   .catch((error) => {
       console.log("usuario no entro");
@@ -61,7 +59,6 @@ loginWithEmail.addEventListener("click",() =>{
     console.log(errorMessage);
   });}
 )
-//Intento de ponerle el ojo a la contraseña-------------------------------------
 let passwordInput = divLogin.querySelector("#loginPassword");
 let eyeIcon = divLogin.querySelector("#eye");
 
@@ -75,7 +72,6 @@ console.log("hola")
     eyeIcon.src = "img/visibility.png";
   }
 });
-//---------------------------------------------------------------------------
 return divLogin;
 }
 

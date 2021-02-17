@@ -10,7 +10,7 @@ export const chatList = () =>{
    </div>
    </main>
     `;
-     // Aqui llamar a la data de firebase de chats disponibles y que se visualicen en este template
+     // Aqui llamamos a la data de firebase de chats disponibles para que se visualicen en este template
     divChatList.innerHTML=viewChatList;
     
     const chatList = divChatList.querySelector("#chatBox");
@@ -24,14 +24,13 @@ export const chatList = () =>{
                 let chats = doc.data();
                 let chatContainer = document.createElement("DIV");
                 let chatTitle = document.createElement("H3");
-                let lastMessage = document.createElement("P");
+                chatTitle.setAttribute("class", "chatTitleContainer")
+                let userProfilePhoto = document.createElement("DIV")
                 chatContainer.setAttribute("id", "chatContainer");
                 chatContainer.setAttribute("class", "chatContainer");
-                lastMessage.setAttribute("id", "lastMessage");
-                lastMessage.setAttribute("class", "lastMessage");
                 chatList.appendChild(chatContainer);
+                chatContainer.appendChild(userProfilePhoto);
                 chatContainer.appendChild(chatTitle);
-                chatContainer.appendChild(lastMessage);
                 chatContainer.onclick = function () {
                     const root = document.getElementById("root");
                     root.innerHTML = "";
@@ -42,9 +41,16 @@ export const chatList = () =>{
 
                 firestore.collection("chats").doc(uid+chats.participantsID).collection("chats").orderBy("date").limitToLast(1).get().then(function(querySnapshot) {
                 querySnapshot.forEach(function(doc){
-                    lastMessage.innerHTML = doc.data().message;
-                    chatTitle.innerHTML += `<div class="chatTitle"><h3 id="chatTitle">${chats.participantsName}<span class="time">${doc.data().time}</span></h3></div>`;
-                    })})
+                    userProfilePhoto.innerHTML += `<img src=${chats.participantsPhotoURL} alt="profilePic" class="chatProfilePic">`;
+                    // lastMessage.innerHTML = doc.data().message;
+                    chatTitle.innerHTML += `
+                    <div class="chatTitle"><h3 id="chatTitle">${chats.participantsName}</h3><span class="time">${doc.data().time}</span>
+                    </div>
+                    <p class="lastMessageChats">${doc.data().message}</p>   
+                    
+                    `;
+                    
+                })})
             })
                 
                   

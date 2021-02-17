@@ -33,8 +33,18 @@ export const channel = (channelName) =>{
     .onSnapshot(function(querySnapshot) {
         channelContent.innerHTML = "";
         querySnapshot.forEach(function(doc) {
-            channelContent.innerHTML += `<div class="message-box" id="messageBox">
-                             <span class="inputMessage" id="inputMessage">${doc.data().message}</span>
+            channelContent.innerHTML += `<div class="mainChannelBox">
+                              <img src="${doc.data().profilePictureURL}" alt="profilePic" class="chatProfilePic">
+                              <div class="input-content">
+                              <div class="input-nameHour"><span class="input-message-username" id="inputMessage">${doc.data().profileName}</span>
+                              </div>
+                              <div class="input-time">
+                              <span id="inputTime">${doc.data().time}</span>
+                              </div>
+                             <div class="message-box" id="messageBox">
+                             <span class="input-message" id="inputMessageText">${doc.data().message}</span>
+                             </div>
+                             </div>
                            </div>`    ;
             channelContent.scrollTop = channelContent.scrollHeight;
         });
@@ -47,10 +57,11 @@ export const channel = (channelName) =>{
             
          firestore.collection("channels").doc(channelName).collection("messages").add({
                     profileName: currentUserData.displayName,
-                     message: currentUserData.displayName + ": " + message.value,
+                     message: message.value,
                      time: n,
                      userID: uid,
-                     date: Date.now()
+                     date: Date.now(),
+                     profilePictureURL: currentUserData.photoURL,
                  })
                  message.value="";
         } });

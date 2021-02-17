@@ -1,4 +1,3 @@
-import { channel } from "./templateChannel.js"
 import { channelList } from "./templateChannelList.js";
 import { chatList } from "./templateChatList.js"
 
@@ -64,7 +63,6 @@ export const home = () => {
 `;
 
 divHome.innerHTML = viewHome;
-// let menu = divHome.querySelector("#contentMenu");
 
 let searchBar= divHome.querySelector("#searchBar");
 function search(channel){
@@ -92,17 +90,13 @@ firestore.collection('users').doc(uid).get().then(function(doc){
     const logoutButton = divHome.querySelector("#logoutBtn");
     logoutButton.addEventListener("click", () =>{
     firebase.auth().signOut().then(() => {
-    // Sign-out successful.
     console.log("se cerró la sesión")
     location.assign("#/login");
-  }).catch((error) => {
-    // An error happened.
-  });
+  })
 })
 
 let box = divHome.querySelector("#box");
 box.appendChild(channelList());
-// box.appendChild(channel());
 const channelButton = divHome.querySelector("#channelBtn");
 const chatButton = divHome.querySelector("#chatBtn")
 channelButton.addEventListener("click", ()=> {

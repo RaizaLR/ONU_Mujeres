@@ -32,21 +32,22 @@ export const viewChat = (participantsName, participantsID) => {
     .onSnapshot(function(querySnapshot) {
         viewChatContent.innerHTML = "";
         querySnapshot.forEach(function(doc) {
-            viewChatContent.innerHTML += `<div class="message-box" id="messageChatBox">
-            <span class="inputMessage" id="inputChatMessage">${doc.data().message}</span>
-          </div>`    ;
+            viewChatContent.innerHTML += 
+            `<div class="mainChannelBox">
+                              <img src="${doc.data().profilePictureURL}" alt="profilePic" class="chatProfilePic">
+                              <div class="input-content">
+                              <div class="input-nameHour"><span class="input-message-username" id="inputMessage">${doc.data().profileName}</span>
+                              </div>
+                              <div class="input-time">
+                              <span id="inputTime">${doc.data().time}</span>
+                              </div>
+                             <div class="message-box" id="messageBox">
+                             <span class="input-message" id="inputMessageText">${doc.data().message}</span>
+                             </div>
+                             </div>
+                           </div>`  ;
             viewChatContent.scrollTop = viewChatContent.scrollHeight;
         });
-
-        // firestore.collection("chats").doc(participantsID+uid).collection("chats").orderBy("date")
-        // .onSnapshot(function(querySnapshot) {
-        //     viewChatContent.innerHTML = "";
-        //     querySnapshot.forEach(function(doc) {
-        //         viewChatContent.innerHTML += `<div class="message-box" id="messageChatBox">
-        //         <span class="inputMessage" id="inputChatMessage">${doc.data().message}</span>
-        //       </div>`    ;
-        //         viewChatContent.scrollTop = viewChatContent.scrollHeight;
-        //     })})
             
      const sendMessage = divViewChat.querySelector("#sendToChat");
      sendMessage.addEventListener("click", ()=>{
@@ -55,7 +56,9 @@ export const viewChat = (participantsName, participantsID) => {
             let n = d.getHours() + ":" + d.getMinutes();
             
          firestore.collection("chats").doc(uid+participantsID).collection("chats").add({
-            message: currentUserData.displayName + ": " + message.value,
+            profilePictureURL: currentUserData.photoURL,
+            profileName: currentUserData.displayName,
+            message: message.value,
             userID: uid,
             date: Date.now(),
             time: n,
