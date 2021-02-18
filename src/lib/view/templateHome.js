@@ -90,7 +90,6 @@ firestore.collection('users').doc(uid).get().then(function(doc){
     const logoutButton = divHome.querySelector("#logoutBtn");
     logoutButton.addEventListener("click", () =>{
     firebase.auth().signOut().then(() => {
-    console.log("se cerró la sesión")
     location.assign("#/login");
   })
 })

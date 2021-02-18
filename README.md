@@ -2,18 +2,18 @@
 Presentación ONU mujeres:
 
 # Índice:
-1.Introducción
-1.1 Definición de proyecto “Tu Oportunidad” y problemática
-1.2 Identificar las necesidades del usuario y del cliente.
+1. Introducción
+-1.1 Definición de proyecto “Tu Oportunidad” y problemática
+-1.2 Identificar las necesidades del usuario y del cliente.
 
-2.Definición de producto
-2.1 Priorización de necesidades y enfoque del producto
-2.2 Demo [Video](https://www.loom.com/share/ed3e18bd10bb4d1e9f843cc3833856df).
-2.3 Presentación [link](https://drive.google.com/file/d/1I1cpbrqny0p9He1A3e-UpA8899umF73r/view?usp=sharing).
-2.4 Diseño prototipo [Figma](https://www.figma.com/file/8l67r2mMZ9Ky9vF5sqXqjw/Prototipo-ONU-Material-Baseline-Design-Kit?node-id=6%3A29).
+2. Definición de producto
+-2.1 Priorización de necesidades y enfoque del producto
+-2.2 Demo [Video](https://www.loom.com/share/ed3e18bd10bb4d1e9f843cc3833856df).
+-2.3 Presentación [link](https://drive.google.com/file/d/1I1cpbrqny0p9He1A3e-UpA8899umF73r/view?usp=sharing).
+-2.4 Diseño prototipo [Figma](https://www.figma.com/file/8l67r2mMZ9Ky9vF5sqXqjw/Prototipo-ONU-Material-Baseline-Design-Kit?node-id=6%3A29).
 
-3.Solución problemática
-3.1 Cómo creemos que este producto resuelve la problemática.
+3. Solución problemática
+-3.1 Cómo creemos que este producto resuelve la problemática.
 
 
 # Introducción
