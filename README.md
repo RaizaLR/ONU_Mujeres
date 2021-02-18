@@ -44,16 +44,16 @@ e.- Las participantes pueden tener un perfil con su foto
 
 → 3.1 Cómo nuestro producto soluciona la problemática: 
 * a. - La organización necesita un espacio institucional para que las participantes puedan crear una comunidad.
-Nuestra red social permite que las participantes del proyecto Tu Oportunidad se puedan comunicar entre ellas, crear una comunidad y poder generar redes de contacto
+- Nuestra red social permite que las participantes del proyecto Tu Oportunidad se puedan comunicar entre ellas, crear una comunidad y poder generar redes de contacto
 
 * b. - Las participantes quieren un espacio donde puedan compartir sus emprendimientos y ver ofertas de trabajo.
-Pueden crear canales que les permita a las participantes acceder a oportunidades laborales y dar a conocer sus emprendimientos.
+- Las usuarias pueden crear canales que les permita a las participantes acceder a oportunidades laborales y dar a conocer sus emprendimientos.
 
 * c. - Tiene que ser fácil de usar y amigable.
 Nuestra aplicación es simple e intuitiva.
 
 * d. - Tener la posibilidad de traducir los mensajes para que mujeres con idiomas distintos se puedan comunicar.
-La aplicación permite traducir tanto el contenido de la página como los mensajes de los canales y chats en los seis idiomas que requiere la organización: Español, Inglés, Creole, Hindi, Francés y Árabe.
+- La aplicación permite traducir tanto el contenido de la página como los mensajes de los canales y chats en los seis idiomas que requiere la organización: Español, Inglés, Creole, Hindi, Francés y Árabe.
 
 * e. - Las participantes pueden tener un perfil con su foto
-Nuestra aplicación permite crear un perfil con foto de usuario.
+- Nuestra aplicación permite crear un perfil con foto de usuario.
