@@ -25,11 +25,11 @@ El programa «Tu Oportunidad» de ONU Mujeres es una iniciativa que actualmente 
 - Apoyar la rendición de exámenes libres para terminar la educación media
 
 → 1.2 Necesidades del usuario y del cliente: 
-a.- La organización necesita un espacio institucional para que las participantes puedan crear una comunidad.
-b.- Las participantes quieren un espacio donde puedan compartir sus emprendimientos y ver ofertas de trabajo.
-c.- Tiene que ser fácil de usar y amigable.
-d.- Tener la posibilidad de traducir los mensajes para que mujeres con idiomas distintos se puedan comunicar.
-e.- Las participantes pueden tener un perfil con su foto
+- a. La organización necesita un espacio institucional para que las participantes puedan crear una comunidad.
+- b. Las participantes quieren un espacio donde puedan compartir sus emprendimientos y ver ofertas de trabajo.
+- c. Tiene que ser fácil de usar y amigable.
+- d. Tener la posibilidad de traducir los mensajes para que mujeres con idiomas distintos se puedan comunicar.
+- e. Las participantes pueden tener un perfil con su foto
 
 # Definición de producto:
 
