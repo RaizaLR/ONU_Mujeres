@@ -20,9 +20,9 @@ Presentación ONU mujeres:
 
 → 1.1 Definición de programa “Tu Oportunidad” y problemática: 
 El programa «Tu Oportunidad» de ONU Mujeres es una iniciativa que actualmente se desarrolla en 6 países: México, India, Australia, Camerún, Jordania y Chile, cuyo objetivo es empoderar económicamente a mujeres que no han podido completar su educación formal. Se implementa a través de una plataforma e-learning que contiene cursos y contenidos orientados a:
--Desarrollar habilidades personales para fomentar la empleabilidad
--Potenciar el emprendimiento
--Apoyar la rendición de exámenes libres para terminar la educación media
+- Desarrollar habilidades personales para fomentar la empleabilidad
+- Potenciar el emprendimiento
+- Apoyar la rendición de exámenes libres para terminar la educación media
 
 → 1.2 Necesidades del usuario y del cliente: 
 a.- La organización necesita un espacio institucional para que las participantes puedan crear una comunidad.
@@ -35,25 +35,25 @@ e.- Las participantes pueden tener un perfil con su foto
 
 → 2.1 Priorización de necesidades y enfoque del producto: 
  Nuestro producto se enfoca principalmente en estos 4 ámbitos:
--Creación de una plataforma que permita la interacción y comunicación entre las participantes del programa “Tu Oportunidad” y  también con el equipo de Onu Mujeres y los coaches. y que esta sea simple y amigable.
--Creación de comunidades que son de interés para las usuarias del programa.
--Implementación de un sistema de traducción para que se conecten en los países donde se encuentra el programa
--Creación de perfil personalizado para cada usuaria para que puedan conocerse dentro de la plataforma y también fuera de ella.
+- Creación de una plataforma que permita la interacción y comunicación entre las participantes del programa “Tu Oportunidad” y  también con el equipo de Onu Mujeres y los coaches. y que esta sea simple y amigable.
+- Creación de comunidades que son de interés para las usuarias del programa.
+- Implementación de un sistema de traducción para que se conecten en los países donde se encuentra el programa
+- Creación de perfil personalizado para cada usuaria para que puedan conocerse dentro de la plataforma y también fuera de ella.
 
 # Solución problemática:
 
 → 3.1 Cómo nuestro producto soluciona la problemática: 
-* a. - La organización necesita un espacio institucional para que las participantes puedan crear una comunidad.
+a. - La organización necesita un espacio institucional para que las participantes puedan crear una comunidad.
 - Nuestra red social permite que las participantes del proyecto Tu Oportunidad se puedan comunicar entre ellas, crear una comunidad y poder generar redes de contacto
 
-* b. - Las participantes quieren un espacio donde puedan compartir sus emprendimientos y ver ofertas de trabajo.
+b. - Las participantes quieren un espacio donde puedan compartir sus emprendimientos y ver ofertas de trabajo.
 - Las usuarias pueden crear canales que les permita a las participantes acceder a oportunidades laborales y dar a conocer sus emprendimientos.
 
-* c. - Tiene que ser fácil de usar y amigable.
+c. - Tiene que ser fácil de usar y amigable.
 Nuestra aplicación es simple e intuitiva.
 
-* d. - Tener la posibilidad de traducir los mensajes para que mujeres con idiomas distintos se puedan comunicar.
+d. - Tener la posibilidad de traducir los mensajes para que mujeres con idiomas distintos se puedan comunicar.
 - La aplicación permite traducir tanto el contenido de la página como los mensajes de los canales y chats en los seis idiomas que requiere la organización: Español, Inglés, Creole, Hindi, Francés y Árabe.
 
-* e. - Las participantes pueden tener un perfil con su foto
+e. - Las participantes pueden tener un perfil con su foto
 - Nuestra aplicación permite crear un perfil con foto de usuario.
