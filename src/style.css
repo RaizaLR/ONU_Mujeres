@@ -1140,7 +1140,7 @@ width: 80vw;
   letter-spacing: 1.25px;
   color:#4D8FC2;
   text-decoration: none;
-  margin-left: 152px;
+  margin-right: 20px;
 }
 
 .sliderTwoText{
@@ -1151,7 +1151,7 @@ width: 80vw;
 
 .forLoginBtn{
   margin-top: 20px;
-  margin-left: 100px;
+  margin-left: 0px;
   width: 148px;
   height: 40px;
   background-color: #4D8FC2;
